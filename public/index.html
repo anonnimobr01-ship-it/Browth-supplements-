@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#0b0b0d">
+    <meta name="description" content="BROWTH SUPPLEMENTS. Whey, creatina, pré-treino e suplementos para sua rotina.">
+    <title>BROWTH SUPPLEMENTS</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <a class="skip" href="#main">Pular para conteúdo</a>
+    <div class="topline">BROWTH SUPPLEMENTS <span>DISCIPLINA TODOS OS DIAS.</span></div>
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="#/" aria-label="Browth início">BROWTH<small>SUPPLEMENTS</small></a>
+            <form id="search" role="search"><label class="sr-only" for="search-input">Buscar suplementos</label><input
+                    id="search-input" name="q" placeholder="O que move seu treino?" maxlength="80" type="search"><button
+                    aria-label="Buscar" type="submit"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                        <circle cx="10" cy="10" r="6.5" />
+                        <path d="m15 15 6 6" />
+                    </svg></button></form>
+            <div class="header-actions"><a href="#/conta" id="account-link">Minha conta</a><a class="cart-link"
+                    href="#/carrinho">Carrinho <b id="cart-count">0</b></a></div>
+        </div>
+        <nav id="categories" aria-label="Categorias"><a href="#/catalogo">Todos os produtos</a><a
+                href="#/catalogo?categoria=Whey">Whey protein</a><a href="#/catalogo?categoria=Creatina">Creatina</a><a
+                href="#/catalogo?categoria=Pr%C3%A9-Treino">Pré-treino</a><a
+                href="#/catalogo?categoria=Hipercal%C3%B3rico">Hipercalórico</a><a
+                href="#/catalogo?categoria=Vitaminas">Vitaminas</a></nav>
+    </header>
+    <div id="mode" hidden></div>
+    <main id="main" tabindex="-1">
+        <div class="empty">Carregando a loja…</div>
+    </main>
+    <footer>
+        <div class="footer-main"><a class="brand" href="#/">BROWTH<small>SUPPLEMENTS</small></a>
+            <p>Seu próximo nível começa<br>com a sua próxima escolha.</p>
+            <div><a href="#/catalogo">Produtos</a><a href="#/pedidos">Meus pedidos</a><a href="#/conta">Minha conta</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><span>Projeto Integrador BROWTH SUPPLEMENTS</span><span>Nathan Rafael · Mateus Araújo · Pedro
+                Monteiro</span></div>
+    </footer>
+    <div id="toast" role="status" aria-live="polite" hidden></div>
+    <noscript>Ative o JavaScript para navegar pelo catálogo e acessar sua conta.</noscript>
+    <script type="module" src="/js/app.js"></script>
+</body>
+
+</html>

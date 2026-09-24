@@ -1,0 +1,172 @@
+[
+  {
+    "id": "whey300",
+    "name": "WHEY BROWTH 300G",
+    "category": "Whey",
+    "image": "/assets/whey.png",
+    "price_cents": 3990,
+    "description": "Whey Protein Browth de 300g.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "whey750",
+    "name": "WHEY BROWTH 750G",
+    "category": "Whey",
+    "image": "/assets/whey.png",
+    "price_cents": 7490,
+    "description": "Whey Protein Browth de 750g.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "whey1kg",
+    "name": "WHEY BROWTH 1KG",
+    "category": "Whey",
+    "image": "/assets/whey.png",
+    "price_cents": 9990,
+    "description": "Whey Protein Browth de 1kg.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "whey3kg",
+    "name": "WHEY BROWTH 3KG",
+    "category": "Whey",
+    "image": "/assets/whey.png",
+    "price_cents": 24990,
+    "description": "Whey Protein Browth de 3kg.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "creatina300",
+    "name": "CREATINA BROWTH 300G",
+    "category": "Creatina",
+    "image": "/assets/creatina.png",
+    "price_cents": 7990,
+    "description": "Creatina Browth de 300g.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "creatina600",
+    "name": "CREATINA BROWTH 600G",
+    "category": "Creatina",
+    "image": "/assets/creatina.png",
+    "price_cents": 13990,
+    "description": "Creatina Browth de 600g.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "creatina1kg",
+    "name": "CREATINA BROWTH 1KG",
+    "category": "Creatina",
+    "image": "/assets/creatina.png",
+    "price_cents": 19990,
+    "description": "Creatina Browth de 1kg.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "creatina2kg",
+    "name": "CREATINA BROWTH 2KG",
+    "category": "Creatina",
+    "image": "/assets/creatina.png",
+    "price_cents": 34990,
+    "description": "Creatina Browth de 2kg.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "pre300",
+    "name": "PRÉ-TREINO BROWTH 300G",
+    "category": "Pré-Treino",
+    "image": "/assets/pre-treino.png",
+    "price_cents": 8990,
+    "description": "Pré-Treino Browth de 300g.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "pre600",
+    "name": "PRÉ-TREINO BROWTH 600G",
+    "category": "Pré-Treino",
+    "image": "/assets/pre-treino.png",
+    "price_cents": 15990,
+    "description": "Pré-Treino Browth de 600g.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "pre1kg",
+    "name": "PRÉ-TREINO BROWTH 1KG",
+    "category": "Pré-Treino",
+    "image": "/assets/pre-treino.png",
+    "price_cents": 22990,
+    "description": "Pré-Treino Browth de 1kg.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "hiper1kg",
+    "name": "HIPERCALÓRICO BROWTH 1KG",
+    "category": "Hipercalórico",
+    "image": "/assets/hipercalorico.png",
+    "price_cents": 9990,
+    "description": "Hipercalórico Browth de 1kg.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "hiper2kg",
+    "name": "HIPERCALÓRICO BROWTH 2KG",
+    "category": "Hipercalórico",
+    "image": "/assets/hipercalorico.png",
+    "price_cents": 17990,
+    "description": "Hipercalórico Browth de 2kg.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "hiper3kg",
+    "name": "HIPERCALÓRICO BROWTH 3KG",
+    "category": "Hipercalórico",
+    "image": "/assets/hipercalorico.png",
+    "price_cents": 24990,
+    "description": "Hipercalórico Browth de 3kg.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "vitaminaMorango",
+    "name": "VITAMINAS BROWTH - MORANGO",
+    "category": "Vitaminas",
+    "image": "/assets/vitaminas.png",
+    "price_cents": 8990,
+    "description": "Vitaminas Browth sabor morango.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "vitaminaLaranja",
+    "name": "VITAMINAS BROWTH - LARANJA",
+    "category": "Vitaminas",
+    "image": "/assets/vitaminas.png",
+    "price_cents": 8990,
+    "description": "Vitaminas Browth sabor laranja.",
+    "stock": 50,
+    "active": true
+  },
+  {
+    "id": "vitaminaLimao",
+    "name": "VITAMINAS BROWTH - LIMÃO",
+    "category": "Vitaminas",
+    "image": "/assets/vitaminas.png",
+    "price_cents": 8990,
+    "description": "Vitaminas Browth sabor limão.",
+    "stock": 50,
+    "active": true
+  }
+]

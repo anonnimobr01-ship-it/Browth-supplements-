@@ -1,0 +1,8 @@
+/vendor/
+/.env
+/secrets/*
+!/secrets/.gitkeep
+/storage/*
+!/storage/.gitkeep
+/public/assets/pix-qrcode.png
+*.log
