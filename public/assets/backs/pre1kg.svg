@@ -1,22 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200" role="img" aria-label="Mockup ilustrativo do verso de PRÉ-TREINO BROWTH 1KG">
- <defs><linearGradient id="tub"><stop stop-color="#0d0d10"/><stop offset=".13" stop-color="#323238"/><stop offset=".44" stop-color="#0b0b0e"/><stop offset=".82" stop-color="#202025"/><stop offset="1" stop-color="#050506"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="20"/></filter></defs>
- <style>.body{font-family:Arial,sans-serif;fill:#181818}.head{font:700 21px Arial,sans-serif;fill:#710e1b}.meta{font:700 18px Arial,sans-serif;letter-spacing:2px;fill:#afafaf}</style>
- <rect width="960" height="1200" fill="#151517"/><ellipse cx="480" cy="1120" rx="340" ry="45" fill="#000" opacity=".65" filter="url(#shadow)"/>
- <rect x="80" y="105" width="800" height="1005" rx="80" fill="url(#tub)" stroke="#4d4d52" stroke-width="3"/>
- <ellipse cx="480" cy="120" rx="385" ry="58" fill="#26262b" stroke="#55555b" stroke-width="3"/>
- <rect x="120" y="205" width="720" height="812" rx="12" fill="#f3f0e8" stroke="#9a9290" stroke-width="3"/>
- <rect x="120" y="205" width="720" height="100" rx="10" fill="#4a0d12"/>
- <text x="155" y="257" fill="#fff" font-family="Georgia,serif" font-size="39" font-style="italic" font-weight="bold">BROWTH</text>
- <text x="793" y="260" class="meta" text-anchor="end">VERSO · PROTÓTIPO</text>
+ <defs><linearGradient id="tub"><stop stop-color="#050506"/><stop offset=".14" stop-color="#343437"/><stop offset=".32" stop-color="#0e0e10"/><stop offset=".82" stop-color="#222225"/><stop offset="1" stop-color="#030304"/></linearGradient><linearGradient id="lid" x2="0" y2="1"><stop stop-color="#313134"/><stop offset=".48" stop-color="#050506"/><stop offset="1" stop-color="#343438"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="26"/></filter></defs>
+ <style>.body{font-family:Arial,sans-serif;fill:#171719}.head{font:700 21px Arial,sans-serif;fill:#a61e28}.meta{font:700 16px Arial,sans-serif;letter-spacing:2px;fill:#dedee0}</style>
+ <rect width="960" height="1200" fill="#080809"/><ellipse cx="480" cy="1130" rx="350" ry="40" fill="#000" opacity=".8" filter="url(#shadow)"/>
+ <rect x="86" y="126" width="788" height="987" rx="110" fill="url(#tub)" stroke="#343436" stroke-width="3"/>
+ <rect x="126" y="46" width="708" height="185" rx="48" fill="url(#lid)" stroke="#4d4d50" stroke-width="4"/>
+ <path d="M128 165h704M128 187h704M146 208h668" stroke="#66666a" stroke-opacity=".65" stroke-width="5"/>
+ <rect x="112" y="262" width="736" height="763" rx="11" fill="#111113" stroke="#5a2227" stroke-width="3"/>
+ <path d="M112 262h736v85H112z" fill="#390e14"/>
+ <text x="154" y="321" fill="#e1323a" font-family="Arial,sans-serif" font-size="43" font-weight="900" letter-spacing="-2">BROWTH</text>
+ <text x="795" y="313" class="meta" text-anchor="end">SUPLEMENTOS</text>
+ <rect x="125" y="352" width="710" height="607" rx="4" fill="#f6f4ee"/>
  <text x="155" y="343" class="head" font-size="27">PRÉ-TREINO BROWTH 1KG</text>
  <line x1="155" y1="363" x2="805" y2="363" stroke="#a89d95"/>
- <text x="155" y="397" class="head">INGREDIENTES · EXEMPLO FICTÍCIO</text><text x="155" y="431" class="body" font-size="19">Maltodextrina, cafeína anidra, acidulante ácido cítrico,</text><text x="155" y="457" class="body" font-size="19">aroma artificial e edulcorante sucralose.</text>
- <text x="155" y="535" class="head">ALERGÊNICOS · SIMULADOS</text><text x="155" y="569" class="body" font-size="19">Contém: NENHUM DECLARADO. Pode conter: SOJA.</text>
- <text x="155" y="640" class="head">RESTRIÇÕES · SIMULADAS</text><text x="155" y="674" class="body" font-size="19">Contém cafeína. Não destinado a crianças, gestantes ou</text><text x="155" y="700" class="body" font-size="19">lactantes neste exemplo. Pessoas sensíveis à cafeína devem</text><text x="155" y="726" class="body" font-size="19">evitar.</text>
+ <text x="155" y="397" class="head">INGREDIENTES</text><text x="155" y="431" class="body" font-size="19">Maltodextrina, cafeína anidra, acidulante ácido cítrico,</text><text x="155" y="457" class="body" font-size="19">aroma artificial e edulcorante sucralose.</text>
+ <text x="155" y="535" class="head">ALERGÊNICOS</text><text x="155" y="569" class="body" font-size="19">Contém: NENHUM DECLARADO. Pode conter: SOJA.</text>
+ <text x="155" y="640" class="head">RESTRIÇÕES DE USO</text><text x="155" y="674" class="body" font-size="19">Contém cafeína. Não destinado a crianças, gestantes ou</text><text x="155" y="700" class="body" font-size="19">lactantes. Pessoas sensíveis à cafeína devem evitar.</text>
  <line x1="155" y1="777" x2="805" y2="777" stroke="#a89d95"/>
- <text x="155" y="810" class="head">VALORES ILUSTRATIVOS · porção simulada de 10 g</text>
+ <text x="155" y="810" class="head">INFORMAÇÃO NUTRICIONAL · porção de 10 g</text>
  <text x="155" y="842" class="body" font-size="19">Valor energético</text><text x="790" y="842" class="body" text-anchor="end" font-size="19">30 kcal</text><text x="155" y="874" class="body" font-size="19">Carboidratos</text><text x="790" y="874" class="body" text-anchor="end" font-size="19">7 g</text><text x="155" y="906" class="body" font-size="19">Cafeína</text><text x="790" y="906" class="body" text-anchor="end" font-size="19">150 mg</text>
- <rect x="120" y="963" width="720" height="54" fill="#4a0d12"/>
- <text x="480" y="997" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold">PRODUTO FICTÍCIO · NÃO É RÓTULO REAL</text>
- <text x="480" y="1070" fill="#ddd" text-anchor="middle" font-family="Arial,sans-serif" font-size="20">BROWTH SUPPLEMENTS · PROJETO INTEGRADOR</text>
+ <rect x="112" y="965" width="736" height="60" fill="#8b1720"/>
+ <text x="480" y="1002" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="bold">DADOS DE REFERÊNCIA · CONFIRA O RÓTULO OFICIAL</text>
+ <text x="480" y="1080" fill="#ddd" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" letter-spacing="3">BROWTH SUPPLEMENTS</text>
  </svg>

@@ -1,4 +1,4 @@
-// Exploração fictícia do catálogo. Restrições exigem ficha simulada completa por SKU.
+// Restrições exigem ficha completa por SKU.
 export function filterByProfile(products, answers, labels={}) {
  const warnings=[];
  if (!answers || !answers.goal) return {matches:[],warnings:['Escolha um objetivo para explorar o catálogo.'],review:false};
@@ -32,8 +32,8 @@ export function filterByProfile(products, answers, labels={}) {
  })
   .map(p=>({...p,profileScore:scores[p.category]}))
   .sort((a,b)=>b.profileScore-a.profileScore || a.price_cents-b.price_cents || a.name.localeCompare(b.name,'pt-BR'));
- if(restricted)warnings.push('Para restrições alimentares, aparecem apenas produtos compatíveis segundo as fichas simuladas deste projeto fictício. Esses dados não servem para consumo real.');
+ if(restricted)warnings.push('Para restrições alimentares, aparecem apenas produtos compatíveis segundo os dados de referência do catálogo. Confira o rótulo oficial antes de consumir.');
  if(!matches.length)warnings.push('Nenhum produto com informações suficientes corresponde às respostas. Ajuste as respostas ou explore o catálogo e consulte os rótulos.');
- else warnings.push('Correspondência por categoria e ficha simulada; não é prescrição nem orientação de consumo. Produto e dados fictícios.');
+ else warnings.push('Correspondência por categoria e dados de referência. O resultado não é prescrição nem orientação de consumo.');
  return {matches,warnings,review:false};
 }

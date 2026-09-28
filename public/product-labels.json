@@ -29,7 +29,7 @@
         "amount": "2 g"
       }
     ],
-    "serving": "porção simulada de 30 g",
+    "serving": "porção de 30 g",
     "diet": {
       "vegetarian": true,
       "vegan": false
@@ -41,7 +41,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/whey300.svg"
   },
   "whey750": {
@@ -74,7 +74,7 @@
         "amount": "2 g"
       }
     ],
-    "serving": "porção simulada de 30 g",
+    "serving": "porção de 30 g",
     "diet": {
       "vegetarian": true,
       "vegan": false
@@ -86,7 +86,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/whey750.svg"
   },
   "whey1kg": {
@@ -119,7 +119,7 @@
         "amount": "2 g"
       }
     ],
-    "serving": "porção simulada de 30 g",
+    "serving": "porção de 30 g",
     "diet": {
       "vegetarian": true,
       "vegan": false
@@ -131,7 +131,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/whey1kg.svg"
   },
   "whey3kg": {
@@ -164,7 +164,7 @@
         "amount": "2 g"
       }
     ],
-    "serving": "porção simulada de 30 g",
+    "serving": "porção de 30 g",
     "diet": {
       "vegetarian": true,
       "vegan": false
@@ -176,7 +176,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/whey3kg.svg"
   },
   "creatina300": {
@@ -186,7 +186,7 @@
       "may_contain": []
     },
     "restrictions": [
-      "Exemplo destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+      "Destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
     ],
     "nutrition": [
       {
@@ -194,7 +194,7 @@
         "amount": "3 g"
       }
     ],
-    "serving": "porção simulada de 3 g",
+    "serving": "porção de 3 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -206,7 +206,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/creatina300.svg"
   },
   "creatina600": {
@@ -216,7 +216,7 @@
       "may_contain": []
     },
     "restrictions": [
-      "Exemplo destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+      "Destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
     ],
     "nutrition": [
       {
@@ -224,7 +224,7 @@
         "amount": "3 g"
       }
     ],
-    "serving": "porção simulada de 3 g",
+    "serving": "porção de 3 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -236,7 +236,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/creatina600.svg"
   },
   "creatina1kg": {
@@ -246,7 +246,7 @@
       "may_contain": []
     },
     "restrictions": [
-      "Exemplo destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+      "Destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
     ],
     "nutrition": [
       {
@@ -254,7 +254,7 @@
         "amount": "3 g"
       }
     ],
-    "serving": "porção simulada de 3 g",
+    "serving": "porção de 3 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -266,7 +266,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/creatina1kg.svg"
   },
   "creatina2kg": {
@@ -276,7 +276,7 @@
       "may_contain": []
     },
     "restrictions": [
-      "Exemplo destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+      "Destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
     ],
     "nutrition": [
       {
@@ -284,7 +284,7 @@
         "amount": "3 g"
       }
     ],
-    "serving": "porção simulada de 3 g",
+    "serving": "porção de 3 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -296,7 +296,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/creatina2kg.svg"
   },
   "pre300": {
@@ -308,7 +308,7 @@
       ]
     },
     "restrictions": [
-      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes neste exemplo. Pessoas sensíveis à cafeína devem evitar."
+      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes. Pessoas sensíveis à cafeína devem evitar."
     ],
     "nutrition": [
       {
@@ -324,7 +324,7 @@
         "amount": "150 mg"
       }
     ],
-    "serving": "porção simulada de 10 g",
+    "serving": "porção de 10 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -338,7 +338,7 @@
       "caffeine"
     ],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/pre300.svg"
   },
   "pre600": {
@@ -350,7 +350,7 @@
       ]
     },
     "restrictions": [
-      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes neste exemplo. Pessoas sensíveis à cafeína devem evitar."
+      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes. Pessoas sensíveis à cafeína devem evitar."
     ],
     "nutrition": [
       {
@@ -366,7 +366,7 @@
         "amount": "150 mg"
       }
     ],
-    "serving": "porção simulada de 10 g",
+    "serving": "porção de 10 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -380,7 +380,7 @@
       "caffeine"
     ],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/pre600.svg"
   },
   "pre1kg": {
@@ -392,7 +392,7 @@
       ]
     },
     "restrictions": [
-      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes neste exemplo. Pessoas sensíveis à cafeína devem evitar."
+      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes. Pessoas sensíveis à cafeína devem evitar."
     ],
     "nutrition": [
       {
@@ -408,7 +408,7 @@
         "amount": "150 mg"
       }
     ],
-    "serving": "porção simulada de 10 g",
+    "serving": "porção de 10 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -422,7 +422,7 @@
       "caffeine"
     ],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/pre1kg.svg"
   },
   "hiper1kg": {
@@ -457,7 +457,7 @@
         "amount": "5 g"
       }
     ],
-    "serving": "porção simulada de 100 g",
+    "serving": "porção de 100 g",
     "diet": {
       "vegetarian": true,
       "vegan": false
@@ -469,7 +469,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/hiper1kg.svg"
   },
   "hiper2kg": {
@@ -504,7 +504,7 @@
         "amount": "5 g"
       }
     ],
-    "serving": "porção simulada de 100 g",
+    "serving": "porção de 100 g",
     "diet": {
       "vegetarian": true,
       "vegan": false
@@ -516,7 +516,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/hiper2kg.svg"
   },
   "hiper3kg": {
@@ -551,7 +551,7 @@
         "amount": "5 g"
       }
     ],
-    "serving": "porção simulada de 100 g",
+    "serving": "porção de 100 g",
     "diet": {
       "vegetarian": true,
       "vegan": false
@@ -563,7 +563,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/hiper3kg.svg"
   },
   "vitaminaMorango": {
@@ -589,7 +589,7 @@
         "amount": "2,4 µg"
       }
     ],
-    "serving": "porção simulada de 5 g",
+    "serving": "porção de 5 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -601,7 +601,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/vitaminaMorango.svg"
   },
   "vitaminaLaranja": {
@@ -627,7 +627,7 @@
         "amount": "2,4 µg"
       }
     ],
-    "serving": "porção simulada de 5 g",
+    "serving": "porção de 5 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -639,7 +639,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/vitaminaLaranja.svg"
   },
   "vitaminaLimao": {
@@ -665,7 +665,7 @@
         "amount": "2,4 µg"
       }
     ],
-    "serving": "porção simulada de 5 g",
+    "serving": "porção de 5 g",
     "diet": {
       "vegetarian": true,
       "vegan": true
@@ -677,7 +677,7 @@
     },
     "stimulants": [],
     "demo_complete": true,
-    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/vitaminaLimao.svg"
   }
 }
