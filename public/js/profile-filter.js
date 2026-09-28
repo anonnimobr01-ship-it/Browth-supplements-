@@ -1,4 +1,4 @@
-// Exploração do catálogo. Composição e restrições exigem rótulo verificado por SKU.
+// Exploração fictícia do catálogo. Restrições exigem ficha simulada completa por SKU.
 export function filterByProfile(products, answers, labels={}) {
  const warnings=[];
  if (!answers || !answers.goal) return {matches:[],warnings:['Escolha um objetivo para explorar o catálogo.'],review:false};
@@ -11,14 +11,16 @@ export function filterByProfile(products, answers, labels={}) {
  const scores={
   Whey: (answers.protein==='yes' && ['gain','nutrition','routine'].includes(answers.goal))?4:0,
   Creatina: (frequency>=3 && ['gain','performance'].includes(answers.goal))?3:0,
-  'Hipercalórico': (answers.calories==='yes' && ['gain','nutrition'].includes(answers.goal))?3:0
+  'Hipercalórico': (answers.calories==='yes' && ['gain','nutrition'].includes(answers.goal))?3:0,
+  'Pré-Treino': (frequency>=3 && answers.goal==='performance' && answers.caffeine==='no')?2:0
  };
- // Sem composição ou indicação confirmada no banco, não classificar pré-treino/vitaminas.
+ // Vitaminas exigem necessidade individual; não inferir pela meta de treino.
  const matches=products.filter(p=>{
   if(p.active===false || Number(p.stock)<=0 || Number(p.price_cents)>max || !(scores[p.category]>0))return false;
+  if(p.category==='Pré-Treino' && (labels[p.id]?.demo_complete!==true || !Array.isArray(labels[p.id].stimulants)))return false;
   if(!restricted)return true;
   const label=labels[p.id];
-  if(!label?.verified)return false;
+  if(!label?.demo_complete)return false;
   if(answers.diet==='vegetarian' && label.diet?.vegetarian!==true)return false;
   if(answers.diet==='vegan' && label.diet?.vegan!==true)return false;
   if(answers.avoid!=='none'){
@@ -30,8 +32,8 @@ export function filterByProfile(products, answers, labels={}) {
  })
   .map(p=>({...p,profileScore:scores[p.category]}))
   .sort((a,b)=>b.profileScore-a.profileScore || a.price_cents-b.price_cents || a.name.localeCompare(b.name,'pt-BR'));
- if(restricted)warnings.push('Para restrições alimentares, só aparecem produtos com rótulo verificado e compatibilidade confirmada. Confira a embalagem da versão antes da compra.');
+ if(restricted)warnings.push('Para restrições alimentares, aparecem apenas produtos compatíveis segundo as fichas simuladas deste projeto fictício. Esses dados não servem para consumo real.');
  if(!matches.length)warnings.push('Nenhum produto com informações suficientes corresponde às respostas. Ajuste as respostas ou explore o catálogo e consulte os rótulos.');
- else warnings.push('Correspondência por categoria e respostas, não é prescrição de uso. Confira composição, alergênicos, advertências e indicação no rótulo da versão.');
+ else warnings.push('Correspondência por categoria e ficha simulada; não é prescrição nem orientação de consumo. Produto e dados fictícios.');
  return {matches,warnings,review:false};
 }

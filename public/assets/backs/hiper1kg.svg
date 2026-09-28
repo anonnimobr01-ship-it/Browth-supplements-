@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200" role="img" aria-label="Mockup ilustrativo do verso de HIPERCALÓRICO BROWTH 1KG">
+ <defs><linearGradient id="tub"><stop stop-color="#0d0d10"/><stop offset=".13" stop-color="#323238"/><stop offset=".44" stop-color="#0b0b0e"/><stop offset=".82" stop-color="#202025"/><stop offset="1" stop-color="#050506"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="20"/></filter></defs>
+ <style>.body{font-family:Arial,sans-serif;fill:#181818}.head{font:700 21px Arial,sans-serif;fill:#710e1b}.meta{font:700 18px Arial,sans-serif;letter-spacing:2px;fill:#afafaf}</style>
+ <rect width="960" height="1200" fill="#151517"/><ellipse cx="480" cy="1120" rx="340" ry="45" fill="#000" opacity=".65" filter="url(#shadow)"/>
+ <rect x="80" y="105" width="800" height="1005" rx="80" fill="url(#tub)" stroke="#4d4d52" stroke-width="3"/>
+ <ellipse cx="480" cy="120" rx="385" ry="58" fill="#26262b" stroke="#55555b" stroke-width="3"/>
+ <rect x="120" y="205" width="720" height="812" rx="12" fill="#f3f0e8" stroke="#9a9290" stroke-width="3"/>
+ <rect x="120" y="205" width="720" height="100" rx="10" fill="#4a0d12"/>
+ <text x="155" y="257" fill="#fff" font-family="Georgia,serif" font-size="39" font-style="italic" font-weight="bold">BROWTH</text>
+ <text x="793" y="260" class="meta" text-anchor="end">VERSO · PROTÓTIPO</text>
+ <text x="155" y="343" class="head" font-size="27">HIPERCALÓRICO BROWTH 1KG</text>
+ <line x1="155" y1="363" x2="805" y2="363" stroke="#a89d95"/>
+ <text x="155" y="397" class="head">INGREDIENTES · EXEMPLO FICTÍCIO</text><text x="155" y="431" class="body" font-size="19">Maltodextrina, proteína concentrada do soro de leite,</text><text x="155" y="457" class="body" font-size="19">cacau em pó e emulsificante lecitina de soja.</text>
+ <text x="155" y="535" class="head">ALERGÊNICOS · SIMULADOS</text><text x="155" y="569" class="body" font-size="19">Contém: LEITE, SOJA. Pode conter: GLÚTEN.</text>
+ <text x="155" y="640" class="head">RESTRIÇÕES · SIMULADAS</text><text x="155" y="674" class="body" font-size="19">Contém leite e soja. Pode conter glúten. Não é indicado a</text><text x="155" y="700" class="body" font-size="19">pessoas alérgicas a esses ingredientes.</text>
+ <line x1="155" y1="777" x2="805" y2="777" stroke="#a89d95"/>
+ <text x="155" y="810" class="head">VALORES ILUSTRATIVOS · porção simulada de 100 g</text>
+ <text x="155" y="842" class="body" font-size="19">Valor energético</text><text x="790" y="842" class="body" text-anchor="end" font-size="19">390 kcal</text><text x="155" y="874" class="body" font-size="19">Carboidratos</text><text x="790" y="874" class="body" text-anchor="end" font-size="19">70 g</text><text x="155" y="906" class="body" font-size="19">Proteínas</text><text x="790" y="906" class="body" text-anchor="end" font-size="19">15 g</text><text x="155" y="938" class="body" font-size="19">Gorduras totais</text><text x="790" y="938" class="body" text-anchor="end" font-size="19">5 g</text>
+ <rect x="120" y="963" width="720" height="54" fill="#4a0d12"/>
+ <text x="480" y="997" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold">PRODUTO FICTÍCIO · NÃO É RÓTULO REAL</text>
+ <text x="480" y="1070" fill="#ddd" text-anchor="middle" font-family="Arial,sans-serif" font-size="20">BROWTH SUPPLEMENTS · PROJETO INTEGRADOR</text>
+ </svg>

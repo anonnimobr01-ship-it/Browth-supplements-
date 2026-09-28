@@ -1,359 +1,683 @@
 {
   "whey300": {
-    "verified": false,
-    "composition": null,
+    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [
+        "milk",
+        "soy"
+      ],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "120 kcal"
+      },
+      {
+        "name": "Proteínas",
+        "amount": "23 g"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "3 g"
+      },
+      {
+        "name": "Gorduras totais",
+        "amount": "2 g"
+      }
+    ],
+    "serving": "porção simulada de 30 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": false
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": false,
+      "lactose": false,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/whey300.svg"
   },
   "whey750": {
-    "verified": false,
-    "composition": null,
+    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [
+        "milk",
+        "soy"
+      ],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "120 kcal"
+      },
+      {
+        "name": "Proteínas",
+        "amount": "23 g"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "3 g"
+      },
+      {
+        "name": "Gorduras totais",
+        "amount": "2 g"
+      }
+    ],
+    "serving": "porção simulada de 30 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": false
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": false,
+      "lactose": false,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/whey750.svg"
   },
   "whey1kg": {
-    "verified": false,
-    "composition": null,
+    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [
+        "milk",
+        "soy"
+      ],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "120 kcal"
+      },
+      {
+        "name": "Proteínas",
+        "amount": "23 g"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "3 g"
+      },
+      {
+        "name": "Gorduras totais",
+        "amount": "2 g"
+      }
+    ],
+    "serving": "porção simulada de 30 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": false
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": false,
+      "lactose": false,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/whey1kg.svg"
   },
   "whey3kg": {
-    "verified": false,
-    "composition": null,
+    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [
+        "milk",
+        "soy"
+      ],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "120 kcal"
+      },
+      {
+        "name": "Proteínas",
+        "amount": "23 g"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "3 g"
+      },
+      {
+        "name": "Gorduras totais",
+        "amount": "2 g"
+      }
+    ],
+    "serving": "porção simulada de 30 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": false
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": false,
+      "lactose": false,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/whey3kg.svg"
   },
   "creatina300": {
-    "verified": false,
-    "composition": null,
+    "composition": "Creatina monohidratada.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Exemplo destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+    ],
+    "nutrition": [
+      {
+        "name": "Creatina",
+        "amount": "3 g"
+      }
+    ],
+    "serving": "porção simulada de 3 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/creatina300.svg"
   },
   "creatina600": {
-    "verified": false,
-    "composition": null,
+    "composition": "Creatina monohidratada.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Exemplo destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+    ],
+    "nutrition": [
+      {
+        "name": "Creatina",
+        "amount": "3 g"
+      }
+    ],
+    "serving": "porção simulada de 3 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/creatina600.svg"
   },
   "creatina1kg": {
-    "verified": false,
-    "composition": null,
+    "composition": "Creatina monohidratada.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Exemplo destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+    ],
+    "nutrition": [
+      {
+        "name": "Creatina",
+        "amount": "3 g"
+      }
+    ],
+    "serving": "porção simulada de 3 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/creatina1kg.svg"
   },
   "creatina2kg": {
-    "verified": false,
-    "composition": null,
+    "composition": "Creatina monohidratada.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Exemplo destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+    ],
+    "nutrition": [
+      {
+        "name": "Creatina",
+        "amount": "3 g"
+      }
+    ],
+    "serving": "porção simulada de 3 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/creatina2kg.svg"
   },
   "pre300": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": [
+        "soy"
+      ]
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes neste exemplo. Pessoas sensíveis à cafeína devem evitar."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "30 kcal"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "7 g"
+      },
+      {
+        "name": "Cafeína",
+        "amount": "150 mg"
+      }
+    ],
+    "serving": "porção simulada de 10 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [
+      "caffeine"
+    ],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/pre300.svg"
   },
   "pre600": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": [
+        "soy"
+      ]
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes neste exemplo. Pessoas sensíveis à cafeína devem evitar."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "30 kcal"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "7 g"
+      },
+      {
+        "name": "Cafeína",
+        "amount": "150 mg"
+      }
+    ],
+    "serving": "porção simulada de 10 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [
+      "caffeine"
+    ],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/pre600.svg"
   },
   "pre1kg": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": [
+        "soy"
+      ]
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém cafeína. Não destinado a crianças, gestantes ou lactantes neste exemplo. Pessoas sensíveis à cafeína devem evitar."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "30 kcal"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "7 g"
+      },
+      {
+        "name": "Cafeína",
+        "amount": "150 mg"
+      }
+    ],
+    "serving": "porção simulada de 10 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [
+      "caffeine"
+    ],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/pre1kg.svg"
   },
   "hiper1kg": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [
+        "milk",
+        "soy"
+      ],
+      "may_contain": [
+        "gluten"
+      ]
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém leite e soja. Pode conter glúten. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "390 kcal"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "70 g"
+      },
+      {
+        "name": "Proteínas",
+        "amount": "15 g"
+      },
+      {
+        "name": "Gorduras totais",
+        "amount": "5 g"
+      }
+    ],
+    "serving": "porção simulada de 100 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": false
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": false,
+      "lactose": false,
+      "gluten": false
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/hiper1kg.svg"
   },
   "hiper2kg": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [
+        "milk",
+        "soy"
+      ],
+      "may_contain": [
+        "gluten"
+      ]
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém leite e soja. Pode conter glúten. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "390 kcal"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "70 g"
+      },
+      {
+        "name": "Proteínas",
+        "amount": "15 g"
+      },
+      {
+        "name": "Gorduras totais",
+        "amount": "5 g"
+      }
+    ],
+    "serving": "porção simulada de 100 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": false
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": false,
+      "lactose": false,
+      "gluten": false
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/hiper2kg.svg"
   },
   "hiper3kg": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [
+        "milk",
+        "soy"
+      ],
+      "may_contain": [
+        "gluten"
+      ]
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Contém leite e soja. Pode conter glúten. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
+    "nutrition": [
+      {
+        "name": "Valor energético",
+        "amount": "390 kcal"
+      },
+      {
+        "name": "Carboidratos",
+        "amount": "70 g"
+      },
+      {
+        "name": "Proteínas",
+        "amount": "15 g"
+      },
+      {
+        "name": "Gorduras totais",
+        "amount": "5 g"
+      }
+    ],
+    "serving": "porção simulada de 100 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": false
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": false,
+      "lactose": false,
+      "gluten": false
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/hiper3kg.svg"
   },
   "vitaminaMorango": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de morango.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Não substitui uma alimentação variada. Pessoas com condições de saúde devem buscar orientação profissional."
+    ],
+    "nutrition": [
+      {
+        "name": "Vitamina C",
+        "amount": "45 mg"
+      },
+      {
+        "name": "Vitamina B6",
+        "amount": "1,3 mg"
+      },
+      {
+        "name": "Vitamina B12",
+        "amount": "2,4 µg"
+      }
+    ],
+    "serving": "porção simulada de 5 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/vitaminaMorango.svg"
   },
   "vitaminaLaranja": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de laranja.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Não substitui uma alimentação variada. Pessoas com condições de saúde devem buscar orientação profissional."
+    ],
+    "nutrition": [
+      {
+        "name": "Vitamina C",
+        "amount": "45 mg"
+      },
+      {
+        "name": "Vitamina B6",
+        "amount": "1,3 mg"
+      },
+      {
+        "name": "Vitamina B12",
+        "amount": "2,4 µg"
+      }
+    ],
+    "serving": "porção simulada de 5 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/vitaminaLaranja.svg"
   },
   "vitaminaLimao": {
-    "verified": false,
-    "composition": null,
+    "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de limão.",
     "allergens": {
-      "contains": null,
-      "may_contain": null
+      "contains": [],
+      "may_contain": []
     },
-    "restrictions": null,
-    "nutrition": null,
-    "serving": null,
+    "restrictions": [
+      "Não substitui uma alimentação variada. Pessoas com condições de saúde devem buscar orientação profissional."
+    ],
+    "nutrition": [
+      {
+        "name": "Vitamina C",
+        "amount": "45 mg"
+      },
+      {
+        "name": "Vitamina B6",
+        "amount": "1,3 mg"
+      },
+      {
+        "name": "Vitamina B12",
+        "amount": "2,4 µg"
+      }
+    ],
+    "serving": "porção simulada de 5 g",
     "diet": {
-      "vegetarian": null,
-      "vegan": null
+      "vegetarian": true,
+      "vegan": true
     },
     "free_from": {
-      "milk": null,
-      "lactose": null,
-      "gluten": null
+      "milk": true,
+      "lactose": true,
+      "gluten": true
     },
-    "source": null
+    "stimulants": [],
+    "demo_complete": true,
+    "source": "Ficha ilustrativa criada para o projeto BROWTH SUPPLEMENTS",
+    "back_image": "/assets/backs/vitaminaLimao.svg"
   }
 }
