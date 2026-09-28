@@ -33,18 +33,21 @@ Ajuste apenas o caminho de `composer.phar`. O arquivo `.env` configura o projeto
 ## O que está implementado
 
 - Catálogo com 17 produtos originais, busca sem distinção de acentos, categorias e ordenação de preço.
-- Página de produto, versões, estoque e visualização opcional do modelo 3D original.
+- Página de produto, versões, estoque, visualização 3D opcional e ficha de rótulo por versão. Campos sem rótulo confirmado aparecem como não cadastrados.
 - Cadastro/login por e-mail e senha, Google, recuperação de senha e logout via Firebase.
 - Carrinho visitante no navegador; carrinho autenticado no Supabase. Na entrada, a mesclagem usa o maior valor por produto para não duplicar itens em novas tentativas.
 - API verifica Firebase ID Token, inclusive revogação, em todas as rotas pessoais.
 - Checkout com endereço brasileiro, frete fixo configurável, preço e estoque verificados no servidor.
 - Transação atômica para pedido, itens, baixa de estoque e limpeza do carrinho; chave de idempotência evita duplicação por repetição da mesma tentativa.
 - Histórico paginado, detalhe de pedido e confirmação administrativa de Pix.
+- Questionário de exploração do catálogo por objetivo, rotina e orçamento; restrições alimentares exigem ficha de rótulo verificada.
 - Layout responsivo, navegação por teclado, estados vazios/erro e mensagens acessíveis.
 
 ## Prévia sem credenciais
 
 Com o servidor iniciado, abra **http://localhost:8000/?demo=1**. Esse modo usa um catálogo de exemplo separado e permite testar navegação/carrinho, mas **não cria contas, pedidos ou pagamentos**. Uma falha da API real nunca ativa a demonstração silenciosamente.
+
+Para cadastrar ingredientes, alergênicos, advertências e tabela nutricional por versão, consulte [docs/ROTULOS.md](docs/ROTULOS.md). Não deduza composição a partir do nome do produto.
 
 ## Pix e operação da loja
 
