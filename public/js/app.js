@@ -61,26 +61,38 @@ function catalog(params){
  list.sort(sort==='price-up'?(a,b)=>a.price_cents-b.price_cents:sort==='price-down'?(a,b)=>b.price_cents-a.price_cents:(a,b)=>a.name.localeCompare(b.name,'pt-BR'));
  return `<div class="breadcrumb"><a href="#/">Início</a> / Catálogo</div><span class="eyebrow">ENCONTRE SEU PRÓXIMO NÍVEL</span><h1>${query?'Busca: '+esc(query):esc(category||'Nossos suplementos')}</h1><p><a class="button secondary" href="#/encontre">Encontre sua linha →</a></p><div class="filters"><a class="chip ${!category?'active':''}" href="#/catalogo">Todos</a>${categoryNames.map(c=>`<a class="chip ${category===c?'active':''}" href="#/catalogo?categoria=${encodeURIComponent(c)}">${esc(c)}</a>`).join('')}</div><div class="toolbar"><p>${list.length} produtos encontrados</p><select id="sort" aria-label="Ordenar produtos"><option value="name" ${sort==='name'?'selected':''}>Nome: A–Z</option><option value="price-up" ${sort==='price-up'?'selected':''}>Menor preço</option><option value="price-down" ${sort==='price-down'?'selected':''}>Maior preço</option></select></div>${list.length?`<div class="grid">${cards(list)}</div>`:'<div class="empty"><h2>Nenhum produto por aqui.</h2><p>Tente outro nome ou categoria.</p><a class="button" href="#/catalogo">Ver catálogo</a></div>'}`;
 }
-function quizChoice(name,label,options){
- return `<label for="quiz-${name}">${esc(label)}</label><select id="quiz-${name}" name="${name}" required><option value="">Selecione uma opção</option>${options.map(([value,text])=>`<option value="${esc(value)}">${esc(text)}</option>`).join('')}</select>`;
+const quizSteps=[
+ {title:'Seu objetivo',subtitle:'Comece pelo que você busca e pela sua rotina de exercícios.',questions:[
+  ['goal','Qual é seu objetivo principal?','Escolha o que mais se aproxima da sua intenção.',[['gain','Ganhar massa muscular'],['performance','Explorar produtos para treinos de força'],['nutrition','Complementar a alimentação'],['routine','Manter a rotina de exercícios'],['unsure','Ainda não sei']]],
+  ['frequency','Com que frequência você se exercita?','Pense em uma semana habitual.',[['none','Não pratico'],['low','1–2 vezes por semana'],['medium','3–4 vezes por semana'],['high','5 ou mais vezes por semana']]]
+ ]},
+ {title:'Sua alimentação',subtitle:'Estas respostas ajudam a organizar as categorias do catálogo.',questions:[
+  ['protein','Você sente dificuldade de atingir sua necessidade de proteína com a alimentação?','Se não souber, escolha “Não sei”.',[['yes','Sim'],['no','Não'],['unknown','Não sei']]],
+  ['calories','Você sente dificuldade de consumir refeições suficientes para seu objetivo?','Não é necessário calcular calorias aqui.',[['yes','Sim'],['no','Não'],['unknown','Não sei']]]
+ ]},
+ {title:'Suas preferências',subtitle:'Vamos considerar alimentação e ingredientes que você evita.',questions:[
+  ['caffeine','Você evita cafeína ou outros estimulantes?','O pré-treino fictício deste catálogo contém cafeína.',[['yes','Sim'],['no','Não'],['unknown','Não sei']]],
+  ['diet','Qual é sua preferência alimentar?','Usamos as informações das fichas simuladas.',[['none','Sem restrição'],['vegetarian','Vegetariana'],['vegan','Vegana']]],
+  ['avoid','Precisa evitar algum ingrediente?','Escolha o principal. Para vários ingredientes, confira todas as fichas.',[['none','Não'],['milk','Leite'],['lactose','Lactose'],['gluten','Glúten'],['other','Outro ingrediente']]]
+ ]},
+ {title:'Últimos detalhes',subtitle:'Respostas que ajudam a aplicar restrições e a faixa de preço.',questions:[
+  ['age','Qual é sua faixa etária?','Faixa etária é necessária para limitar sugestões automáticas.',[['adult','18–59 anos'],['minor','Menor de 18 anos'],['senior','60 anos ou mais']]],
+  ['health','Gravidez, amamentação, uso de medicamentos ou condição de saúde que exige cuidados?','Você pode optar por não informar.',[['no','Não'],['yes','Sim'],['unknown','Não sei / prefiro não informar']]],
+  ['budget','Qual o preço máximo por produto?','O valor é aplicado a cada item, não ao carrinho.',[['all','Sem limite'],['7000','Até R$ 70'],['10000','Até R$ 100'],['15000','Até R$ 150'],['25000','Até R$ 250']]]
+ ]}
+];
+let quizStep=0,quizDraft={};
+function quizChoice(question,index){
+ const [name,label,hint,options]=question;
+ return `<fieldset class="quiz-question"><legend><span class="quiz-number">${String(index+1).padStart(2,'0')}</span>${esc(label)}</legend><p class="quiz-hint">${esc(hint)}</p><div class="quiz-options">${options.map(([value,title])=>`<label class="quiz-option"><input type="radio" name="${name}" value="${esc(value)}" ${quizDraft[name]===value?'checked':''}><span>${esc(title)}</span><span class="quiz-check" aria-hidden="true">✓</span></label>`).join('')}</div></fieldset>`;
 }
 function quizPage(){
  if(quizAnswers){
   const result=filterByProfile(products,quizAnswers,productLabels);
   return `<div class="breadcrumb"><a href="#/">Início</a> / Encontre sua linha</div><section class="quiz-intro"><span class="eyebrow">ESCOLHAS COM CLAREZA</span><h1>Seu resultado.</h1><p>Usamos seu objetivo, sua rotina e seu orçamento para organizar as categorias disponíveis.</p></section><div class="quiz-actions"><button class="secondary" id="edit-quiz">Alterar respostas</button><a class="button secondary" href="#/catalogo">Ver catálogo completo</a></div><div class="notice" role="status">${result.warnings.map(esc).join('<br>')}</div>${result.matches.length?`<p class="fine">${result.matches.length} versões correspondentes. Ordem por afinidade de categoria e menor preço.</p><div class="grid">${cards(result.matches)}</div>`:''}`;
  }
- return `<div class="breadcrumb"><a href="#/">Início</a> / Encontre sua linha</div><section class="quiz-intro"><span class="eyebrow">ENCONTRE SUA LINHA</span><h1>O que combina com sua rotina?</h1><p>Responda às perguntas para explorar categorias do catálogo. As respostas ficam apenas nesta página. Produtos e fichas são fictícios; este filtro é uma demonstração.</p></section><form id="quiz-form" class="panel quiz-form"><div class="quiz-grid">
- ${quizChoice('goal','Qual é seu objetivo principal?', [['gain','Ganhar massa muscular'],['performance','Explorar produtos para treinos de força'],['nutrition','Complementar a alimentação'],['routine','Manter a rotina de exercícios'],['unsure','Ainda não sei']])}
- ${quizChoice('frequency','Com que frequência você se exercita?', [['none','Não pratico'],['low','1–2 vezes por semana'],['medium','3–4 vezes por semana'],['high','5 ou mais vezes por semana']])}
- ${quizChoice('protein','Você sente dificuldade de atingir sua necessidade de proteína com a alimentação?', [['yes','Sim'],['no','Não'],['unknown','Não sei']])}
- ${quizChoice('calories','Você sente dificuldade de consumir refeições suficientes para seu objetivo?', [['yes','Sim'],['no','Não'],['unknown','Não sei']])}
- ${quizChoice('caffeine','Você evita cafeína ou outros estimulantes?', [['yes','Sim'],['no','Não'],['unknown','Não sei']])}
- ${quizChoice('diet','Qual é sua preferência alimentar?', [['none','Sem restrição'],['vegetarian','Vegetariana'],['vegan','Vegana']])}
- ${quizChoice('avoid','Precisa evitar algum ingrediente?', [['none','Não'],['milk','Leite'],['lactose','Lactose'],['gluten','Glúten'],['other','Outro ingrediente']])}
- ${quizChoice('age','Qual é sua faixa etária?', [['adult','18–59 anos'],['minor','Menor de 18 anos'],['senior','60 anos ou mais']])}
- ${quizChoice('health','Gravidez, amamentação, uso de medicamentos ou condição de saúde que exige cuidados?', [['no','Não'],['yes','Sim'],['unknown','Não sei / prefiro não informar']])}
- ${quizChoice('budget','Qual o preço máximo por produto?', [['all','Sem limite'],['7000','Até R$ 70'],['10000','Até R$ 100'],['15000','Até R$ 150'],['25000','Até R$ 250']])}
- </div><p class="fine">Não guardamos estas respostas na sua conta. As compatibilidades vêm de fichas simuladas e não devem orientar o consumo de produtos reais.</p><button type="submit">VER PRODUTOS CORRESPONDENTES →</button></form>`;
+ const step=quizSteps[quizStep],offset=quizSteps.slice(0,quizStep).reduce((n,s)=>n+s.questions.length,0);
+ return `<div class="breadcrumb"><a href="#/">Início</a> / Encontre sua linha</div><section class="quiz-intro"><span class="eyebrow">ENCONTRE SUA LINHA</span><h1>Uma escolha mais simples começa aqui.</h1><p>Responda em poucos passos para explorar o catálogo. Produtos e fichas são fictícios; este filtro é uma demonstração.</p></section><section class="quiz-shell" aria-label="Questionário de produtos"><div class="quiz-stage"><span>ETAPA ${quizStep+1} DE ${quizSteps.length}</span><strong>${esc(step.title)}</strong></div><div class="quiz-progress" role="progressbar" aria-label="Progresso do questionário" aria-valuenow="${quizStep+1}" aria-valuemin="0" aria-valuemax="${quizSteps.length}"><span style="width:${((quizStep+1)/quizSteps.length)*100}%"></span></div><form id="quiz-form" class="quiz-form"><div class="quiz-heading"><span class="eyebrow">SEU PERFIL · ${String(quizStep+1).padStart(2,'0')}</span><h2>${esc(step.title)}</h2><p>${esc(step.subtitle)}</p></div>${step.questions.map((q,i)=>quizChoice(q,offset+i)).join('')}<div class="quiz-footer"><p class="fine">As respostas ficam só nesta página. As fichas e compatibilidades são simuladas e não orientam o consumo de produtos reais.</p><div class="quiz-controls">${quizStep>0?'<button type="button" class="secondary" id="quiz-back">← Voltar</button>':''}${quizStep<quizSteps.length-1?'<button type="button" id="quiz-next">Continuar →</button>':'<button type="submit">Ver produtos correspondentes →</button>'}</div></div></form></section>`;
 }
 function labelDetails(id){
  const info=productLabels[id];
@@ -145,7 +157,13 @@ $('#search').addEventListener('submit',e=>{e.preventDefault();location.hash='/ca
 main.addEventListener('click',e=>{
  const button=e.target.closest('button');if(!button || (button.type==='submit' && button.closest('form')))return;
  busy(button,async()=>{
-  if(button.id==='edit-quiz'){quizAnswers=null;await render();}
+  if(button.id==='edit-quiz'){quizDraft={...quizAnswers};quizAnswers=null;quizStep=0;await render();}
+  else if(button.id==='quiz-back'||button.id==='quiz-next'){
+   const form=$('#quiz-form');if(!form)return;
+   if(button.id==='quiz-next'&&![...form.querySelectorAll('.quiz-question')].every(q=>q.querySelector('input:checked'))){notice('Selecione uma opção em cada pergunta para continuar.');[...form.querySelectorAll('.quiz-question')].find(q=>!q.querySelector('input:checked'))?.querySelector('input')?.focus();return;}
+   Object.assign(quizDraft,Object.fromEntries(new FormData(form)));
+   quizStep+=button.id==='quiz-next'?1:-1;await render();main.focus({preventScroll:true});
+  }
   else if(button.dataset.add)await add(button.dataset.add);
   else if(button.dataset.remove){await setQuantity(button.dataset.remove,0);await render();}
   else if(button.id==='google'){await Auth.google();await mergeGuest();location.hash='/conta';}
@@ -177,7 +195,10 @@ main.addEventListener('submit',e=>{
  e.preventDefault();const form=e.target,button=form.querySelector('button[type="submit"]')||form.querySelector('button');
  busy(button,async()=>{
   const data=Object.fromEntries(new FormData(form));
-  if(form.id==='quiz-form'){quizAnswers=data;await render();main.focus({preventScroll:true});return;}
+  if(form.id==='quiz-form'){
+   if(![...form.querySelectorAll('.quiz-question')].every(q=>q.querySelector('input:checked'))){notice('Selecione uma opção em cada pergunta.');return;}
+   quizAnswers={...quizDraft,...data};quizDraft={};quizStep=0;await render();main.focus({preventScroll:true});return;
+  }
   if(form.id==='buy-form')await add(form.dataset.product,Number(data.quantity));
   if(form.id==='auth-form'){
    if(form.dataset.register==='true'){if(data.password!==data.confirm)throw new Error('As senhas não são iguais.');await Auth.register(data.name.trim(),data.email.trim(),data.password);}else await Auth.login(data.email.trim(),data.password);

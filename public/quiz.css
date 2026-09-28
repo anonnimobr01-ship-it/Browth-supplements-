@@ -1,1 +1,47 @@
-.quiz-intro{max-width:740px;margin:24px 0 28px}.quiz-intro p{max-width:650px}.quiz-actions{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 20px}.quiz-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 20px}.quiz-form{max-width:900px}.quiz-form>button{margin-top:10px}.label-facts strong{color:var(--text)}.label-facts .notice{line-height:1.6}.nutrition{border-collapse:collapse;width:100%;margin:15px 0;font-size:13px}.nutrition caption{text-align:left;font-weight:bold;margin-bottom:8px}.nutrition th,.nutrition td{text-align:left;border-bottom:1px solid var(--line);padding:7px}.nutrition td{text-align:right}@media(max-width:700px){.quiz-grid{grid-template-columns:1fr}.quiz-actions>*{width:100%}}
+/* Entrada do questionário entre o cabeçalho e as categorias */
+.finder-strip{background:radial-gradient(circle at 8% 40%,#8e1b2755,transparent 30%),linear-gradient(100deg,#230e13,#391017 60%,#220e13);border-block:1px solid #7b283057}
+.finder-strip-inner{max-width:1216px;margin:auto;padding:14px 0;display:flex;align-items:center;gap:17px}
+.finder-emblem{display:grid;place-items:center;flex:none;width:42px;height:42px;color:#ffe3e4;background:#d5222a2b;border:1px solid #e6525d70;border-radius:12px;font-size:24px}
+.finder-copy{display:flex;flex-direction:column;line-height:1.35;flex:1;min-width:0}
+.finder-copy strong{font-size:14px;letter-spacing:.2px}
+.finder-copy small{color:#dfafb5;font-size:11px;margin-top:4px}
+.finder-link{display:inline-flex;align-items:center;justify-content:center;gap:15px;background:#e63039;color:white;border:1px solid #ff6d73;padding:11px 17px;border-radius:5px;font-size:11px;font-weight:800;letter-spacing:.7px;white-space:nowrap}
+.finder-link:hover{background:#bd2029}
+.finder-link span{font-size:18px;line-height:1}
+.quiz-intro{max-width:770px;margin:28px 0 30px}
+.quiz-intro h1{margin-bottom:13px}
+.quiz-intro p{max-width:640px;font-size:14px}
+.quiz-shell{max-width:920px;margin:0 auto 45px;border:1px solid #ffffff20;border-radius:12px;background:linear-gradient(145deg,#1b1217,#111115 42%);box-shadow:0 24px 70px #0005;overflow:hidden}
+.quiz-stage{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 28px;color:#dfafb5;font-size:11px;font-weight:bold;letter-spacing:1.2px;text-transform:uppercase}
+.quiz-stage strong{color:#fff;font-size:12px;letter-spacing:.3px}
+.quiz-progress{height:5px;background:#ffffff13}
+.quiz-progress span{display:block;height:100%;background:linear-gradient(90deg,#a11925,#ff5058);transition:width .25s}
+.quiz-form{padding:32px 42px 36px}
+.quiz-heading{margin-bottom:29px}
+.quiz-heading .eyebrow{margin-bottom:7px}
+.quiz-heading h2{font-size:30px;margin-bottom:8px}
+.quiz-heading p{font-size:13px;margin-bottom:0}
+.quiz-question{margin:0 0 30px;padding:0 0 30px;border:0;border-bottom:1px solid #ffffff17;min-width:0}
+.quiz-question legend{color:#fff;font-size:19px;font-weight:750;line-height:1.35;padding:0;width:100%;display:flex;align-items:flex-start;gap:13px}
+.quiz-number{font-size:12px;color:#f18a91;border:1px solid #7f323a;background:#4a0d1259;border-radius:6px;padding:5px 8px;line-height:1;margin-top:1px}
+.quiz-hint{margin:8px 0 17px 42px;font-size:12px}
+.quiz-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.quiz-option{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;margin:0;padding:13px 14px;color:#ededee;background:#17171d;border:1px solid #ffffff2c;border-radius:8px;font-size:13px;line-height:1.3;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
+.quiz-option:hover{border-color:#e2606a;background:#27191e;transform:translateY(-1px)}
+.quiz-option:has(input:checked){background:#48131b;border-color:#ff666e;box-shadow:inset 0 0 0 1px #ff666e38}
+.quiz-option:focus-within{outline:2px solid #ff8087;outline-offset:2px}
+.quiz-option input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.quiz-check{display:grid;place-items:center;flex:none;width:20px;height:20px;border-radius:50%;border:1px solid #ffffff57;color:transparent;font-size:12px}
+.quiz-option:has(input:checked) .quiz-check{background:#eb2e38;border-color:#eb2e38;color:white}
+.quiz-footer .fine{margin-bottom:17px;max-width:630px}
+.quiz-controls{display:flex;justify-content:flex-end;gap:12px}
+.quiz-controls button{min-height:44px}
+.quiz-actions{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 20px}
+.label-facts strong{color:var(--text)}
+.label-facts .notice{line-height:1.6}
+.nutrition{border-collapse:collapse;width:100%;margin:15px 0;font-size:13px}
+.nutrition caption{text-align:left;font-weight:bold;margin-bottom:8px}
+.nutrition th,.nutrition td{text-align:left;border-bottom:1px solid var(--line);padding:7px}
+.nutrition td{text-align:right}
+@media(max-width:1280px){.finder-strip-inner{margin-inline:32px}}
+@media(max-width:700px){.finder-strip-inner{margin-inline:20px;gap:11px;flex-wrap:wrap}.finder-emblem{width:36px;height:36px;font-size:20px}.finder-copy strong{font-size:13px}.finder-copy small{font-size:10px}.finder-link{width:100%;margin-top:2px}.quiz-intro{margin:22px 0}.quiz-shell{margin:0 -8px 35px}.quiz-stage{padding:13px 18px}.quiz-form{padding:25px 18px}.quiz-heading h2{font-size:26px}.quiz-question legend{font-size:16px}.quiz-hint{margin-left:0}.quiz-options{grid-template-columns:1fr}.quiz-option{min-height:52px}.quiz-controls button{flex:1}.quiz-actions>*{width:100%}}
