@@ -15,3 +15,8 @@
 .review-stars input:checked+span{background:#5e152b;border-color:#e23856;color:#fff}.review-stars label:has(input:focus-visible){outline:2px solid #fff;outline-offset:3px}
 .review-rating{color:#e8798d;font-size:14px}.review-item{padding:20px 0;border-bottom:1px solid #393036}.review-item-top{display:flex;justify-content:space-between;gap:12px}.review-item time{font-size:12px;color:#aaa}.review-item p{white-space:pre-wrap;overflow-wrap:anywhere}.review-more{margin-top:20px}.review-status{font-size:14px}.review-form button{margin-top:16px;min-height:44px}
 @media(max-width:700px){.reviews-layout{grid-template-columns:1fr}.reviews-heading{display:block}.review-stars{gap:6px}.review-stars span:first-of-type{padding:8px 10px}.review-form button{width:100%}}
+
+
+/* Updated BROWTH identity and expanded catalog */
+.brand img{display:block;width:220px;height:auto;max-width:100%;object-fit:contain}.header-inner .brand{flex-shrink:0}.footer-main .brand img{width:200px}nav{justify-content:flex-start;overflow-x:auto;white-space:nowrap;scrollbar-width:thin}nav a{flex-shrink:0}.hero-art img{max-width:100%}.category-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:700px){.brand img{width:160px}.header-inner{gap:15px}.category-grid{display:flex}.hero-art img{width:100%;height:100%}}

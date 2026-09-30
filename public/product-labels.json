@@ -679,5 +679,230 @@
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
     "back_image": "/assets/backs/vitaminaLimao.svg"
+  },
+  "plant-chocolate600": {
+    "brand": "BROWTH",
+    "family": "plant-protein",
+    "format": "powder",
+    "flavors": [
+      "chocolate"
+    ],
+    "flavor_names": [
+      "Chocolate"
+    ],
+    "size": "600 g",
+    "variant": "Chocolate / 600 g",
+    "objectives": [
+      "protein",
+      "practical"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0,
+    "diet": {
+      "vegan": true,
+      "vegetarian": true
+    }
+  },
+  "plant-baunilha600": {
+    "brand": "BROWTH",
+    "family": "plant-protein",
+    "format": "powder",
+    "flavors": [
+      "vanilla"
+    ],
+    "flavor_names": [
+      "Baunilha"
+    ],
+    "size": "600 g",
+    "variant": "Baunilha / 600 g",
+    "objectives": [
+      "protein",
+      "practical"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0,
+    "diet": {
+      "vegan": true,
+      "vegetarian": true
+    }
+  },
+  "barra-chocolate60": {
+    "brand": "BROWTH",
+    "family": "protein-bar",
+    "format": "bar",
+    "flavors": [
+      "chocolate"
+    ],
+    "flavor_names": [
+      "Chocolate"
+    ],
+    "size": "60 g",
+    "variant": "Chocolate / 60 g",
+    "objectives": [
+      "protein",
+      "practical"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0
+  },
+  "barra-vegan-frutas50": {
+    "brand": "BROWTH",
+    "family": "vegan-bar",
+    "format": "bar",
+    "flavors": [
+      "fruit"
+    ],
+    "flavor_names": [
+      "Frutas vermelhas"
+    ],
+    "size": "50 g",
+    "variant": "Frutas vermelhas / 50 g",
+    "objectives": [
+      "protein",
+      "practical"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0,
+    "diet": {
+      "vegan": true,
+      "vegetarian": true
+    }
+  },
+  "shake-chocolate250": {
+    "brand": "BROWTH",
+    "family": "protein-shake",
+    "format": "drink",
+    "flavors": [
+      "chocolate"
+    ],
+    "flavor_names": [
+      "Chocolate"
+    ],
+    "size": "250 ml",
+    "variant": "Chocolate / 250 ml",
+    "objectives": [
+      "protein",
+      "practical"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0
+  },
+  "plant-shake-baunilha250": {
+    "brand": "BROWTH",
+    "family": "plant-shake",
+    "format": "drink",
+    "flavors": [
+      "vanilla"
+    ],
+    "flavor_names": [
+      "Baunilha"
+    ],
+    "size": "250 ml",
+    "variant": "Baunilha / 250 ml",
+    "objectives": [
+      "protein",
+      "practical"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0,
+    "diet": {
+      "vegan": true,
+      "vegetarian": true
+    }
+  },
+  "pasta-amendoim500": {
+    "brand": "BROWTH",
+    "family": "pasta-amendoim",
+    "format": "food",
+    "flavors": [
+      "other"
+    ],
+    "flavor_names": [
+      "Amendoim"
+    ],
+    "size": "500 g",
+    "variant": "Amendoim / 500 g",
+    "objectives": [
+      "practical"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0
+  },
+  "aveia-proteica1kg": {
+    "brand": "BROWTH",
+    "family": "aveia-proteica",
+    "format": "food",
+    "flavors": [
+      "chocolate"
+    ],
+    "flavor_names": [
+      "Chocolate"
+    ],
+    "size": "1 kg",
+    "variant": "Chocolate / 1 kg",
+    "objectives": [
+      "protein",
+      "practical"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0
+  },
+  "multi-capsulas60": {
+    "brand": "BROWTH",
+    "family": "multivitaminico",
+    "format": "capsule",
+    "flavors": [],
+    "flavor_names": [],
+    "size": "60 cápsulas",
+    "variant": "60 cápsulas",
+    "objectives": [
+      "vitamins"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0
+  },
+  "multi-comprimidos60": {
+    "brand": "BROWTH",
+    "family": "multivitaminico",
+    "format": "tablet",
+    "flavors": [],
+    "flavor_names": [],
+    "size": "60 comprimidos",
+    "variant": "60 comprimidos",
+    "objectives": [
+      "vitamins"
+    ],
+    "sports": [],
+    "launched_at": "2026-09-30T19:13:19Z",
+    "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+    "demo_complete": false,
+    "rating_count": 0
   }
 }

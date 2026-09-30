@@ -1077,5 +1077,330 @@
       ],
       "sports": []
     }
+  },
+  {
+    "id": "plant-chocolate600",
+    "name": "PLANT PROTEIN BROWTH CHOCOLATE 600G",
+    "category": "Proteína vegetal",
+    "description": "Plant protein browth chocolate 600g. Proteína de origem vegetal em pó.",
+    "image": "/assets/plant-chocolate600.webp",
+    "price_cents": 12990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "plant-protein",
+      "format": "powder",
+      "flavors": [
+        "chocolate"
+      ],
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "size": "600 g",
+      "variant": "Chocolate / 600 g",
+      "objectives": [
+        "protein",
+        "practical"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0,
+      "diet": {
+        "vegan": true,
+        "vegetarian": true
+      }
+    }
+  },
+  {
+    "id": "plant-baunilha600",
+    "name": "PLANT PROTEIN BROWTH BAUNILHA 600G",
+    "category": "Proteína vegetal",
+    "description": "Plant protein browth baunilha 600g. Proteína de origem vegetal em pó.",
+    "image": "/assets/plant-baunilha600.webp",
+    "price_cents": 12990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "plant-protein",
+      "format": "powder",
+      "flavors": [
+        "vanilla"
+      ],
+      "flavor_names": [
+        "Baunilha"
+      ],
+      "size": "600 g",
+      "variant": "Baunilha / 600 g",
+      "objectives": [
+        "protein",
+        "practical"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0,
+      "diet": {
+        "vegan": true,
+        "vegetarian": true
+      }
+    }
+  },
+  {
+    "id": "barra-chocolate60",
+    "name": "PROTEIN BAR BROWTH CHOCOLATE 60G",
+    "category": "Barras proteicas",
+    "description": "Protein bar browth chocolate 60g. Barra proteica em embalagem individual.",
+    "image": "/assets/barra-chocolate60.webp",
+    "price_cents": 990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "protein-bar",
+      "format": "bar",
+      "flavors": [
+        "chocolate"
+      ],
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "size": "60 g",
+      "variant": "Chocolate / 60 g",
+      "objectives": [
+        "protein",
+        "practical"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0
+    }
+  },
+  {
+    "id": "barra-vegan-frutas50",
+    "name": "VEGAN PROTEIN BAR BROWTH FRUTAS VERMELHAS 50G",
+    "category": "Barras proteicas",
+    "description": "Vegan protein bar browth frutas vermelhas 50g. Barra proteica em embalagem individual.",
+    "image": "/assets/barra-vegan-frutas50.webp",
+    "price_cents": 1190,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "vegan-bar",
+      "format": "bar",
+      "flavors": [
+        "fruit"
+      ],
+      "flavor_names": [
+        "Frutas vermelhas"
+      ],
+      "size": "50 g",
+      "variant": "Frutas vermelhas / 50 g",
+      "objectives": [
+        "protein",
+        "practical"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0,
+      "diet": {
+        "vegan": true,
+        "vegetarian": true
+      }
+    }
+  },
+  {
+    "id": "shake-chocolate250",
+    "name": "PROTEIN SHAKE BROWTH CHOCOLATE 250ML",
+    "category": "Bebidas e shakes",
+    "description": "Protein shake browth chocolate 250ml. Bebida proteica pronta para consumo.",
+    "image": "/assets/shake-chocolate250.webp",
+    "price_cents": 1290,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "protein-shake",
+      "format": "drink",
+      "flavors": [
+        "chocolate"
+      ],
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "size": "250 ml",
+      "variant": "Chocolate / 250 ml",
+      "objectives": [
+        "protein",
+        "practical"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0
+    }
+  },
+  {
+    "id": "plant-shake-baunilha250",
+    "name": "PLANT SHAKE BROWTH BAUNILHA 250ML",
+    "category": "Bebidas e shakes",
+    "description": "Plant shake browth baunilha 250ml. Bebida proteica pronta para consumo.",
+    "image": "/assets/plant-shake-baunilha250.webp",
+    "price_cents": 1490,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "plant-shake",
+      "format": "drink",
+      "flavors": [
+        "vanilla"
+      ],
+      "flavor_names": [
+        "Baunilha"
+      ],
+      "size": "250 ml",
+      "variant": "Baunilha / 250 ml",
+      "objectives": [
+        "protein",
+        "practical"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0,
+      "diet": {
+        "vegan": true,
+        "vegetarian": true
+      }
+    }
+  },
+  {
+    "id": "pasta-amendoim500",
+    "name": "PASTA DE AMENDOIM BROWTH CREMOSA 500G",
+    "category": "Alimentos",
+    "description": "Pasta de amendoim browth cremosa 500g. Pasta de amendoim de textura cremosa.",
+    "image": "/assets/pasta-amendoim500.webp",
+    "price_cents": 2990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "pasta-amendoim",
+      "format": "food",
+      "flavors": [
+        "other"
+      ],
+      "flavor_names": [
+        "Amendoim"
+      ],
+      "size": "500 g",
+      "variant": "Amendoim / 500 g",
+      "objectives": [
+        "practical"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0
+    }
+  },
+  {
+    "id": "aveia-proteica1kg",
+    "name": "AVEIA PROTEICA BROWTH CHOCOLATE 1KG",
+    "category": "Alimentos",
+    "description": "Aveia proteica browth chocolate 1kg. Aveia proteica para preparar mingau, sabor chocolate.",
+    "image": "/assets/aveia-proteica1kg.webp",
+    "price_cents": 5990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "aveia-proteica",
+      "format": "food",
+      "flavors": [
+        "chocolate"
+      ],
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "size": "1 kg",
+      "variant": "Chocolate / 1 kg",
+      "objectives": [
+        "protein",
+        "practical"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0
+    }
+  },
+  {
+    "id": "multi-capsulas60",
+    "name": "MULTIVITAMÍNICO BROWTH 60 CÁPSULAS",
+    "category": "Vitaminas",
+    "description": "Multivitamínico browth 60 cápsulas. Multivitamínico em cápsulas.",
+    "image": "/assets/multi-capsulas60.webp",
+    "price_cents": 4990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "multivitaminico",
+      "format": "capsule",
+      "flavors": [],
+      "flavor_names": [],
+      "size": "60 cápsulas",
+      "variant": "60 cápsulas",
+      "objectives": [
+        "vitamins"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0
+    }
+  },
+  {
+    "id": "multi-comprimidos60",
+    "name": "MULTIVITAMÍNICO BROWTH 60 COMPRIMIDOS",
+    "category": "Vitaminas",
+    "description": "Multivitamínico browth 60 comprimidos. Multivitamínico em comprimidos.",
+    "image": "/assets/multi-comprimidos60.webp",
+    "price_cents": 4490,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "family": "multivitaminico",
+      "format": "tablet",
+      "flavors": [],
+      "flavor_names": [],
+      "size": "60 comprimidos",
+      "variant": "60 comprimidos",
+      "objectives": [
+        "vitamins"
+      ],
+      "sports": [],
+      "launched_at": "2026-09-30T19:13:19Z",
+      "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
+      "demo_complete": false,
+      "rating_count": 0
+    }
   }
 ]
