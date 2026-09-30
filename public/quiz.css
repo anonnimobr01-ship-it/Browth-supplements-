@@ -1,13 +1,12 @@
-/* Entrada do questionário entre o cabeçalho e as categorias */
-.finder-strip{background:radial-gradient(circle at 8% 40%,#8e1b2755,transparent 30%),linear-gradient(100deg,#230e13,#391017 60%,#220e13);border-block:1px solid #7b283057}
-.finder-strip-inner{max-width:1216px;margin:auto;padding:14px 0;display:flex;align-items:center;gap:17px}
-.finder-emblem{display:grid;place-items:center;flex:none;width:42px;height:42px;color:#ffe3e4;background:#d5222a2b;border:1px solid #e6525d70;border-radius:12px;font-size:24px}
-.finder-copy{display:flex;flex-direction:column;line-height:1.35;flex:1;min-width:0}
-.finder-copy strong{font-size:14px;letter-spacing:.2px}
-.finder-copy small{color:#dfafb5;font-size:11px;margin-top:4px}
-.finder-link{display:inline-flex;align-items:center;justify-content:center;gap:15px;background:#e63039;color:white;border:1px solid #ff6d73;padding:11px 17px;border-radius:5px;font-size:11px;font-weight:800;letter-spacing:.7px;white-space:nowrap}
-.finder-link:hover{background:#bd2029}
-.finder-link span{font-size:18px;line-height:1}
+/* Botão do filtro acima das categorias, com borda animada */
+.finder-strip{background:var(--bg)}
+.finder-strip-inner{max-width:1216px;margin:auto;padding:14px 0 18px;display:flex;justify-content:center}
+.finder-link{position:relative;display:inline-flex;align-items:center;justify-content:center;width:220px;height:56px;padding:0;background:transparent;border:1px solid #8f3038;border-radius:0;color:#f6f6f7;transition:background 1s ease-in-out,border-color 1s ease-in-out}
+.finder-link svg{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);fill:none;stroke:#ff5963;stroke-width:1.5;stroke-dasharray:150 546;stroke-dashoffset:150;pointer-events:none;transition:stroke-dashoffset 1s ease-in-out}
+.finder-link:hover,.finder-link:focus-visible{background:var(--wine);border-color:#bb414b}
+.finder-link:hover svg,.finder-link:focus-visible svg{stroke-dashoffset:-546}
+.finder-link span{position:relative;font-size:12px;font-weight:500;letter-spacing:1.6px;line-height:1.3}
+@media(prefers-reduced-motion:reduce){.finder-link,.finder-link svg{transition:none}.finder-link svg{stroke-dasharray:none}}
 .quiz-intro{max-width:770px;margin:28px 0 30px}
 .quiz-intro h1{margin-bottom:13px}
 .quiz-intro p{max-width:640px;font-size:14px}
@@ -54,4 +53,4 @@
 .gallery-dots button[aria-current="true"]{background:#ff4a55;box-shadow:0 0 0 3px #ff4a5530}
 @media(prefers-reduced-motion:reduce){.gallery-track{transition:none}}
 @media(max-width:1280px){.finder-strip-inner{margin-inline:32px}}
-@media(max-width:700px){.finder-strip-inner{margin-inline:20px;gap:11px;flex-wrap:wrap}.finder-emblem{width:36px;height:36px;font-size:20px}.finder-copy strong{font-size:13px}.finder-copy small{font-size:10px}.finder-link{width:100%;margin-top:2px}.quiz-intro{margin:22px 0}.quiz-shell{margin:0 -8px 35px}.quiz-stage{padding:13px 18px}.quiz-form{padding:25px 18px}.quiz-heading h2{font-size:26px}.quiz-question legend{font-size:16px}.quiz-hint{margin-left:0}.quiz-options{grid-template-columns:1fr}.quiz-option{min-height:52px}.quiz-controls button{flex:1}.quiz-actions>*{width:100%}}
+@media(max-width:700px){.finder-strip-inner{margin-inline:20px}.quiz-intro{margin:22px 0}.quiz-shell{margin:0 -8px 35px}.quiz-stage{padding:13px 18px}.quiz-form{padding:25px 18px}.quiz-heading h2{font-size:26px}.quiz-question legend{font-size:16px}.quiz-hint{margin-left:0}.quiz-options{grid-template-columns:1fr}.quiz-option{min-height:52px}.quiz-controls button{flex:1}.quiz-actions>*{width:100%}}
