@@ -2,7 +2,7 @@
 export const questions=[
  ['objective','Qual é o seu principal objetivo?',[['protein','Alimentação com mais proteína'],['performance','Desempenho esportivo'],['recovery','Recuperação após atividades físicas'],['practical','Praticidade na alimentação'],['vitamins','Vitaminas e minerais'],['explore','Apenas conhecer os produtos']]],
  ['sport','Qual esporte você pratica ou pretende praticar?',[['strength','Musculação'],['running','Corrida'],['football','Futebol'],['cycling','Ciclismo'],['swimming','Natação'],['basketball','Basquete'],['volleyball','Vôlei'],['combat','Lutas'],['cross','Cross training'],['other','Outro'],['none','Ainda não pratico nenhum']]],
- ['category','Que tipo de produto você está procurando?',[['Whey','Whey Protein'],['Proteína vegetal','Proteína vegetal'],['Creatina','Creatina'],['Barras proteicas','Barras proteicas'],['Bebidas e shakes','Bebidas e shakes'],['Vitaminas','Vitaminas e minerais'],['Alimentos','Alimentos'],['Acessórios','Acessórios'],['all','Ainda não sei']]],
+ ['category','Que tipo de produto você está procurando?',[['Whey','Whey Protein'],['Proteína vegetal','Proteína vegetal'],['Creatina','Creatina'],['Pré-Treino','Pré-treino'],['Hipercalórico','Hipercalórico'],['Barras proteicas','Barras proteicas'],['Bebidas e shakes','Bebidas e shakes'],['Vitaminas','Vitaminas e minerais'],['Alimentos','Alimentos'],['all','Ainda não sei']]],
  ['restrictions','Você possui alguma preferência ou restrição alimentar?',[['none','Nenhuma'],['lactose','Sem lactose'],['gluten','Sem glúten'],['vegan','Vegano'],['vegetarian','Vegetariano']],true],
  ['avoid','Existe algum ingrediente que você prefere evitar?',[['lactose','Lactose'],['gluten','Glúten'],['sugar','Açúcar'],['caffeine','Cafeína'],['animal','Ingredientes de origem animal'],['none','Nenhum']],true],
  ['format','Qual formato de produto você prefere?',[['powder','Pó'],['capsule','Cápsulas'],['tablet','Comprimidos'],['bar','Barra'],['drink','Bebida'],['food','Alimento'],['all','Tanto faz']]],
@@ -38,7 +38,11 @@ export function filterByProfile(products,answers={},manual={}){
   if(p.active===false||!Number.isFinite(price)||price<bounds[0]||price>bounds[1])return false;
   if(manual.available==='yes'&&Number(p.stock)<=0)return false;
   if(manual.category&&p.category!==manual.category)return false;
-  if(manual.q&&!norm(p.name+' '+p.category+' '+p.description).includes(norm(manual.q)))return false;
+  if(manual.q){
+   const searchText=norm([p.id,p.name,p.category,p.description,a.family,a.format,a.size,a.variant,...array(a.flavor_names),...array(a.flavors),a.diet?.vegan===true?'vegano vegan':'',a.diet?.vegetarian===true?'vegetariano':'',a.free_from?.lactose===true?'sem lactose':'',a.free_from?.gluten===true?'sem gluten':''].join(' '));
+   const terms=norm(manual.q).split(' ').filter(Boolean);
+   if(terms.some(term=>!searchText.includes(term)))return false;
+  }
   if(manual.brand&&a.brand!==manual.brand)return false;
   if(manual.format&&a.format!==manual.format)return false;
   if(manual.flavor&&!array(a.flavors).includes(manual.flavor))return false;
