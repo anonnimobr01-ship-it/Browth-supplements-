@@ -47,6 +47,34 @@ try {
   throw new HttpError(503,'Catálogo muito amplo. Refine os filtros por categoria ou preço.');
  }
 
+ if (preg_match('~^/api/products/([^/]+)/reviews$~',$path,$m) && in_array($method,['GET','POST'],true)) {
+  $id=Validation::product($m[1]);
+  $product=$db->request('GET','products',['id'=>'eq.'.$id,'active'=>'eq.true','limit'=>1]);
+  if(!$product)throw new HttpError(404,'Produto não encontrado.');
+  $token=$_COOKIE['browth_review_visitor']??'';
+  if(!is_string($token)||!preg_match('/^[a-f0-9]{64}$/D',$token)) {
+   $token=bin2hex(random_bytes(32));
+   setcookie('browth_review_visitor',$token,['expires'=>time()+31536000,'path'=>'/','secure'=>str_starts_with(env('APP_ORIGINS'), 'https://')||(!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off'),'httponly'=>true,'samesite'=>'Lax']);
+  }
+  $visitor=hash('sha256',$token);
+  if($method==='POST') {
+   RateLimit::check('review:'.$visitor,5);
+   RateLimit::check('review-ip:'.($_SERVER['REMOTE_ADDR']??'unknown'),20);
+   $data=body();$name=$data['author_name']??null;$comment=$data['comment']??null;$rating=$data['rating']??null;
+   if(!is_string($name)||!is_string($comment)||!is_int($rating)||$rating<1||$rating>5)throw new HttpError(422,'Informe nome, comentário e nota de 1 a 5.');
+   $name=trim($name);$comment=trim($comment);
+   if(mb_strlen($name)<2||mb_strlen($name)>80||mb_strlen($comment)<10||mb_strlen($comment)>2000)throw new HttpError(422,'Use um nome de 2 a 80 caracteres e um comentário de 10 a 2000 caracteres.');
+   $db->request('POST','product_reviews',['on_conflict'=>'product_id,visitor_hash'],['product_id'=>$id,'visitor_hash'=>$visitor,'author_name'=>$name,'rating'=>$rating,'comment'=>$comment,'updated_at'=>gmdate('c')],'resolution=merge-duplicates,return=minimal');
+   $product=$db->request('GET','products',['id'=>'eq.'.$id,'limit'=>1]);
+  }
+  $offset=filter_var($_GET['offset']??0,FILTER_VALIDATE_INT,['options'=>['min_range'=>0,'max_range'=>100000]]);
+  if($offset===false)throw new HttpError(422,'Página inválida.');
+  $fields='id,author_name,rating,comment,created_at,updated_at';
+  $rows=$db->request('GET','product_reviews',['product_id'=>'eq.'.$id,'published'=>'eq.true','select'=>$fields,'order'=>'created_at.desc,id.asc','offset'=>$offset,'limit'=>11]);
+  $own=$db->request('GET','product_reviews',['product_id'=>'eq.'.$id,'visitor_hash'=>'eq.'.$visitor,'select'=>$fields.',published','limit'=>1]);
+  $attrs=$product[0]['catalog_attributes']??[];
+  respond(['reviews'=>array_slice($rows,0,10),'has_more'=>count($rows)>10,'own'=>$own[0]??null,'summary'=>['average'=>$attrs['rating']??null,'count'=>$attrs['rating_count']??0]]);
+ }
  if (preg_match('~^/api/products/([^/]+)$~',$path,$m) && $method==='GET') {
   $list=$db->request('GET','products',['id'=>'eq.'.Validation::product($m[1]),'active'=>'eq.true','limit'=>1]);
   if (!$list) throw new HttpError(404,'Produto não encontrado.');respond($list[0]);
