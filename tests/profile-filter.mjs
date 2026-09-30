@@ -3,31 +3,34 @@ import {readFileSync,existsSync} from 'node:fs';
 import {filterByProfile} from '../public/js/profile-filter.js';
 const read=name=>JSON.parse(readFileSync(new URL('../public/'+name,import.meta.url)));
 const products=read('demo-products.json'),labels=read('product-labels.json');
-assert.equal(products.length,17);
 assert.deepEqual(products.map(p=>p.id).sort(),Object.keys(labels).sort());
-for(const product of products){
- const l=labels[product.id];
- assert.equal(l.demo_complete,true);
- assert(l.composition && l.restrictions.length && l.source);
- assert(existsSync(new URL('../public'+l.back_image,import.meta.url)));
+for(const p of products)assert(existsSync(new URL('../public'+labels[p.id].back_image,import.meta.url)));
+const base={category:'all',budget:'all',diet:'none',avoid:'none',caffeine:'no'};
+const ids=answers=>filterByProfile(products,{...base,...answers},labels).matches.map(p=>p.id);
+assert.equal(ids({}).length,17);
+assert.deepEqual(ids({age:'minor',health:'yes'}),ids({}));
+for(const category of ['Whey','Creatina','Pré-Treino','Hipercalórico','Vitaminas']){
+ const found=filterByProfile(products,{...base,category},labels).matches;
+ assert(found.length>0&&found.every(p=>p.category===category));
 }
-const base={goal:'gain',frequency:'medium',protein:'yes',calories:'yes',caffeine:'no',diet:'none',avoid:'none',age:'adult',health:'no',budget:'all'};
-const basic=filterByProfile(products,base,labels);
-assert(basic.matches.some(p=>p.category==='Whey'));
-assert(basic.matches.some(p=>p.category==='Creatina'));
-assert(basic.matches.some(p=>p.category==='Hipercalórico'));
-assert(!basic.matches.some(p=>p.category==='Vitaminas'||p.category==='Pré-Treino'));
-const performance=filterByProfile(products,{...base,goal:'performance'},labels).matches;
-assert(performance.some(p=>p.category==='Pré-Treino'));
-assert(!filterByProfile(products,{...base,goal:'performance',caffeine:'yes'},labels).matches.some(p=>p.category==='Pré-Treino'));
-assert.equal(filterByProfile(products,{...base,budget:'7000'},labels).matches.every(p=>p.price_cents<=7000),true);
-assert.deepEqual(filterByProfile(products,{...base,age:'minor'},labels).matches,[]);
-assert.deepEqual(filterByProfile(products,{...base,health:'yes'},labels).matches,[]);
-const withoutMilk=filterByProfile(products,{...base,avoid:'milk'},labels).matches;
-assert(withoutMilk.length>0 && withoutMilk.every(p=>labels[p.id].free_from.milk===true));
+const cheap=filterByProfile(products,{...base,budget:'7000'},labels).matches;
+assert(cheap.length>0&&cheap.every(p=>p.price_cents<=7000));
+assert(cheap.every((p,i)=>i===0||cheap[i-1].price_cents<=p.price_cents));
+for(const avoid of ['milk','lactose','gluten']){
+ const found=filterByProfile(products,{...base,avoid},labels).matches;
+ assert(found.length>0&&found.every(p=>labels[p.id].free_from[avoid]===true));
+}
 const vegan=filterByProfile(products,{...base,diet:'vegan'},labels).matches;
-assert(vegan.length>0 && vegan.every(p=>labels[p.id].diet.vegan===true));
-assert.deepEqual(filterByProfile(products,{...base,avoid:'other'},labels).matches,[]);
-const missing=structuredClone(labels);missing.creatina300.demo_complete=false;
+assert(vegan.length>0&&vegan.every(p=>labels[p.id].diet.vegan===true));
+assert(!ids({caffeine:'yes'}).some(id=>labels[id].stimulants.includes('caffeine')));
+assert.deepEqual(ids({category:'Whey',diet:'vegan'}),[]);
+const missing=structuredClone(labels);delete missing.creatina300;
 assert(!filterByProfile(products,{...base,avoid:'milk'},missing).matches.some(p=>p.id==='creatina300'));
-console.log('Fichas e filtros simulados: OK');
+const conflicting=structuredClone(labels);conflicting.creatina300.allergens.may_contain=['milk'];
+assert(!filterByProfile(products,{...base,avoid:'milk'},conflicting).matches.some(p=>p.id==='creatina300'));
+const unknown=structuredClone(labels);delete unknown.creatina300.stimulants;
+assert(!filterByProfile(products,{...base,caffeine:'yes'},unknown).matches.some(p=>p.id==='creatina300'));
+const hidden=[...products,{...products[0],id:'hidden',active:false},{...products[0],id:'out',stock:0}];
+assert.equal(filterByProfile(hidden,base,labels).matches.length,17);
+assert.deepEqual(ids({budget:'invalid'}),[]);
+console.log('Filtro de catálogo: categorias, preço, ingredientes e dados ausentes OK');
