@@ -1,6 +1,6 @@
 /* Botão do filtro com seta e destaque vermelho */
 .finder-strip{background:var(--bg)}
-.finder-strip-inner{max-width:1280px;margin:auto;padding:14px 42px 10px 32px;display:flex;justify-content:flex-end}
+.finder-strip-inner{max-width:1280px;margin:auto;padding:14px 42px 10px 32px;display:flex;justify-content:flex-start}
 .finder-link-wrap{position:relative;width:210px;height:40px;isolation:isolate}
 .finder-link{position:relative;z-index:1;display:block;width:210px;height:40px;line-height:36px;padding:0;background:#252529;border:2px solid #252529;border-radius:0;text-align:center;color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:width .35s,background .35s,color .35s,border-color .35s}
 .finder-icon{position:absolute;right:40px;top:0;z-index:0;width:40px;height:40px;border:2px solid transparent;transform:rotate(45deg);pointer-events:none;transition:right .35s,border-color .35s}
