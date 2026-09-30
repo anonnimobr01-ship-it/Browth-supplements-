@@ -22,3 +22,5 @@ O modo `?demo=1` não publica avaliações.
 ## Validação
 
 Sintaxe dos módulos JavaScript e testes existentes de filtragem verificados. Teste SQL transacional confirmou a atualização da média após inserir/editar e a remoção da nota ao ocultar; rollback removeu os dados de teste. A migração está registrada no Supabase.
+
+Validação no site publicado: publicação sem login e edição de 4 para 5 estrelas mantiveram uma única avaliação. API rejeitou nota 6 com HTTP 422 e origem não autorizada com HTTP 403. A avaliação temporária foi excluída após os testes.
