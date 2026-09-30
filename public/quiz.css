@@ -79,3 +79,24 @@
 @media(max-width:850px){.quiz-summary,.manual-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:500px){.quiz-summary{gap:18px;padding:18px}.manual-filters{grid-template-columns:1fr}.quiz-controls button{min-height:48px}.quiz-question legend{font-size:23px}.quiz-option{min-height:55px}.quiz-stage{letter-spacing:.5px}}
 @media(prefers-reduced-motion:reduce){.quiz-enter{animation:none}.quiz-progress span{transition:none}}
+
+/* Pesquisa em coluna lateral, junto à grade do catálogo. */
+.catalog-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:start;margin-top:25px}
+.catalog-sidebar{min-width:0;position:sticky;top:16px}
+.catalog-sidebar .catalog-filter-panel{margin:0;padding:20px;max-height:calc(100dvh - 32px);overflow:auto;scrollbar-width:thin;scrollbar-color:#71313e #161217}
+.catalog-sidebar summary{font-size:14px;letter-spacing:.2px}
+.catalog-sidebar .manual-filters{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:18px}
+.catalog-sidebar .manual-filters>label{margin:0}
+.catalog-sidebar .manual-filters select,.catalog-sidebar .manual-filters input[type=search]{font-size:12px;padding:11px 10px}
+.catalog-sidebar .manual-restrictions{display:flex;flex-direction:column;gap:12px;padding:14px 10px;margin:0;min-width:0;border-radius:5px}
+.catalog-sidebar .manual-restrictions legend{font-size:12px;padding:0 4px}
+.catalog-sidebar .manual-restrictions label{min-height:24px}
+.catalog-sidebar .quiz-actions{display:grid;gap:8px;margin:0}
+.catalog-sidebar .quiz-actions>*{width:100%;min-height:44px;padding:11px;font-size:12px}
+.catalog-results{min-width:0}
+.catalog-results>.toolbar{margin:0 0 20px;min-height:44px}
+.catalog-results>.grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.catalog-results>.notice{margin:0 0 20px}
+@media(max-width:1100px){.catalog-layout{grid-template-columns:240px minmax(0,1fr);gap:20px}.catalog-results>.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.catalog-layout{grid-template-columns:minmax(0,1fr);gap:22px}.catalog-sidebar{position:static}.catalog-sidebar .catalog-filter-panel{max-height:none;overflow:visible;padding:16px}.catalog-sidebar .manual-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-sidebar .manual-restrictions{flex-direction:row;flex-wrap:wrap;gap:14px}.catalog-sidebar .quiz-actions{grid-template-columns:1fr 1fr}.catalog-results>.toolbar{gap:12px}}
+@media(max-width:500px){.catalog-sidebar .manual-filters{grid-template-columns:minmax(0,1fr)}.catalog-sidebar .manual-restrictions label{min-height:32px}.catalog-sidebar .manual-filters select,.catalog-sidebar .manual-filters input[type=search]{min-height:46px;font-size:14px}.catalog-results>.toolbar select{max-width:55%}}
