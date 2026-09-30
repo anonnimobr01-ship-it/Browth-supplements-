@@ -29,7 +29,24 @@ try {
  ]);
  if ($path==='/api/health' && $method==='GET') respond(['ok'=>true,'service'=>'BROWTH API']);
  $db=database();
- if ($path==='/api/products' && $method==='GET') respond($db->request('GET','products',['active'=>'eq.true','select'=>'id,name,category,description,image,price_cents,stock','order'=>'name.asc','limit'=>500]));
+ if ($path==='/api/products' && $method==='GET') {
+  $ranges=['all'=>[0,null],'0-5000'=>[0,5000],'5000-10000'=>[5000,10000],'10000-15000'=>[10000,15000],'15000-25000'=>[15000,25000],'25000-plus'=>[25001,null]];
+  $budget=$_GET['budget']??'all';$category=$_GET['category']??'';
+  if(!is_string($budget)||!isset($ranges[$budget])||!is_string($category)||mb_strlen($category)>80||preg_match('/[(),*]/',$category))throw new HttpError(422,'Filtros inválidos.');
+  $query=['active'=>'eq.true','select'=>'*','order'=>'name.asc,id.asc','limit'=>500];
+  [$minimum,$maximum]=$ranges[$budget];
+  $query['and']='(price_cents.gte.'.$minimum.($maximum===null?'':',price_cents.lte.'.$maximum).')';
+  if($category!=='')$query['category']='eq.'.$category;
+  $products=[];
+  // Page through Supabase; never silently truncate a catalog at 500 rows.
+  for($offset=0;$offset<10000;$offset+=500){
+   $page=$db->request('GET','products',$query+['offset'=>$offset]);
+   foreach($page as $row){$public=array_intersect_key($row,array_flip(['id','name','category','description','image','price_cents','stock','active','catalog_attributes']));$public['catalog_attributes']=is_array($row['catalog_attributes']??null)?$row['catalog_attributes']:[];$products[]=$public;}
+   if(count($page)<500)respond($products);
+  }
+  throw new HttpError(503,'Catálogo muito amplo. Refine os filtros por categoria ou preço.');
+ }
+
  if (preg_match('~^/api/products/([^/]+)$~',$path,$m) && $method==='GET') {
   $list=$db->request('GET','products',['id'=>'eq.'.Validation::product($m[1]),'active'=>'eq.true','limit'=>1]);
   if (!$list) throw new HttpError(404,'Produto não encontrado.');respond($list[0]);

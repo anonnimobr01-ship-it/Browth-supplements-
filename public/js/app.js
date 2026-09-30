@@ -1,6 +1,6 @@
 import {API_BASE} from './config.js';
 import * as Auth from './auth.js';
-import {filterByProfile} from './profile-filter.js';
+import {filterByProfile,questions,sortOptions,attributes,array,effectivePrice} from './profile-filter.js';
 const $=s=>document.querySelector(s), main=$('#main');
 const demo=new URLSearchParams(location.search).get('demo')==='1';
 const money=n=>(Number(n)/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
@@ -11,7 +11,7 @@ const normal=value=>String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,''
 const storage={get(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}},set(key,value){try{localStorage.setItem(key,JSON.stringify(value));}catch{}}};
 const guestKey=demo?'browth-demo-cart-v2':'browth-guest-cart-v2';
 let products=[],user=null,cart=[],config={shipping_cents:1990,pix:{}},authReady=false,loaded=false,version=0,checkoutQuote=null,checkoutAttempt=null,ordersOffset=0;
-let quizAnswers=null,productLabels={};
+let quizAnswers=null,productLabels={},allProducts=[];
 let guest=storage.get(guestKey,[]);
 if(!Array.isArray(guest))guest=[];
 guest=guest.filter(x=>x&&/^[A-Za-z0-9_-]{1,80}$/.test(x.product_id)&&Number.isInteger(x.quantity)&&x.quantity>0&&x.quantity<=100).slice(0,50);
@@ -28,7 +28,7 @@ async function api(path,{method='GET',body,protectedRoute=false,key}={}){
  if(!response.ok){const e=new Error(data.error||'Não foi possível concluir.');e.status=response.status;throw e;}
  return data;
 }
-function guestCart(){return guest.map(x=>({...x,product:products.find(p=>p.id===x.product_id)})).filter(x=>x.product);}
+function guestCart(){return guest.map(x=>({...x,product:allProducts.find(p=>p.id===x.product_id)})).filter(x=>x.product);}
 function count(){const n=cart.reduce((sum,x)=>sum+x.quantity,0);$('#cart-count').textContent=n;$('#account-link').textContent=user?'Minha conta':'Entrar / Cadastrar';}
 async function loadCart(){const current=user?.uid;if(user&&!demo){const result=await api('/cart',{protectedRoute:true});if(user?.uid!==current)return;cart=result;}else cart=guestCart();count();}
 async function mergeGuest(){
@@ -45,7 +45,7 @@ async function mergeGuest(){
 }
 async function setQuantity(id,quantity){
  if(!Number.isInteger(quantity)||quantity<0||quantity>100)throw new Error('Use uma quantidade inteira de 0 a 100.');
- const p=products.find(p=>p.id===id);if(!p)throw new Error('Produto indisponível.');
+ const p=allProducts.find(p=>p.id===id);if(!p)throw new Error('Produto indisponível.');
  if(quantity>p.stock)throw new Error('Quantidade maior que o estoque disponível.');
  if(user&&!demo){await api('/cart/'+encodeURIComponent(id),{method:'PUT',body:{quantity},protectedRoute:true});}
  else {guest=guest.filter(x=>x.product_id!==id);if(quantity)guest.push({product_id:id,quantity});if(guest.length>50)throw new Error('Limite de 50 produtos.');storage.set(guestKey,guest);}
@@ -53,37 +53,24 @@ async function setQuantity(id,quantity){
 }
 const categoryNames=['Whey','Creatina','Pré-Treino','Hipercalórico','Vitaminas'];
 const categoryImages=['whey','creatina','pre-treino','hipercalorico','vitaminas'];
-function cards(list){return list.map(p=>`<article class="card"><a class="card-image" href="#/produto/${encodeURIComponent(p.id)}"><img src="${image(p.image)}" alt="${esc(p.name)}" loading="lazy" width="350" height="280"></a><div class="card-body"><small>${esc(p.category)}</small><h3><a href="#/produto/${encodeURIComponent(p.id)}">${esc(p.name)}</a></h3><div class="price">${money(p.price_cents)}</div><div class="paynote">à vista no Pix</div><button data-add="${esc(p.id)}" ${p.stock<1?'disabled':''}>${p.stock>0?'ADICIONAR AO CARRINHO +':'ESGOTADO'}</button></div></article>`).join('');}
-function home(){return `<section class="hero"><div class="hero-copy"><span class="eyebrow">FORÇA É CONSTRUÇÃO.</span><h1>SEU TREINO.<br>SUA EVOLUÇÃO.<br><em>SEU PRÓXIMO<br>NÍVEL.</em></h1><p>Escolhas que acompanham a sua disciplina.<br>Conheça a linha BROWTH.</p><a class="button" href="#/catalogo">EXPLORAR PRODUTOS <span>↗</span></a> <a class="button secondary" href="#/encontre">ENCONTRE SUA LINHA →</a></div><div class="hero-art"><img src="/assets/whey.png" alt="Embalagem Whey Protein Browth" fetchpriority="high" width="1402" height="1122"><span class="hero-note">BROWTH ORIGINAL<br>FEITO PARA SUA ROTINA</span></div></section><section class="benefits" aria-label="Vantagens da loja"><div class="benefit"><b>01</b><div><strong>ESCOLHA DO SEU JEITO</strong><small>Pesos e categorias para sua rotina</small></div></div><div class="benefit"><b>02</b><div><strong>TUDO EM UM SÓ LUGAR</strong><small>Do catálogo aos seus pedidos</small></div></div><div class="benefit"><b>03</b><div><strong>COMPRA COM CLAREZA</strong><small>Confira o total antes de finalizar</small></div></div></section><section><div class="section-head"><div><span class="eyebrow">FILTRAGEM</span><h2>Qual é o seu próximo passo?</h2></div></div><div class="category-grid">${categoryNames.map((c,i)=>`<a class="category-tile" href="#/catalogo?categoria=${encodeURIComponent(c)}"><img src="/assets/${categoryImages[i]}.png" alt="" loading="lazy"><strong>${esc(c)}</strong><small>Explorar a linha →</small></a>`).join('')}</div></section><section><div class="section-head"><div><span class="eyebrow">SELEÇÃO BROWTH</span><h2>Essenciais da sua rotina.</h2></div><a href="#/catalogo">Ver todos os produtos ↗</a></div><div class="grid">${cards(['whey1kg','creatina300','pre300','hiper1kg'].map(id=>products.find(p=>p.id===id)).filter(Boolean))}</div></section><section class="banner"><div><span class="eyebrow">A CONSTÂNCIA FAZ A DIFERENÇA.</span><h2>O próximo passo é seu.</h2><p>Explore o catálogo e monte sua seleção.</p></div><a class="button secondary" href="#/catalogo">CONHECER A LINHA ↗</a></section>`;}
+function cards(list){return list.map(p=>{const a=attributes(p),badges=[a.free_from?.lactose===true?'Sem lactose':'',a.free_from?.gluten===true?'Sem glúten':'',a.diet?.vegan===true?'Vegano':''].filter(Boolean);return `<article class="card"><a class="card-image" href="#/produto/${encodeURIComponent(p.id)}"><img src="${image(p.image)}" alt="${esc(p.name)}" loading="lazy" width="350" height="280"></a><div class="card-body"><small>${esc(p.category)}</small><h3><a href="#/produto/${encodeURIComponent(p.id)}">${esc(p.name)}</a></h3>${a.flavor_names?.length?`<p class="fine">Sabores: ${array(a.flavor_names).map(esc).join(', ')}</p>`:''}<div class="product-badges">${badges.map(x=>`<span>${esc(x)}</span>`).join('')}</div>${Number.isInteger(a.list_price_cents)&&a.list_price_cents>p.price_cents?`<del class="fine">${money(a.list_price_cents)}</del>`:''}<div class="price">${money(effectivePrice(p))}</div><div class="paynote">à vista no Pix</div><a class="card-details" href="#/produto/${encodeURIComponent(p.id)}">Ver produto →</a><button data-add="${esc(p.id)}" ${p.stock<1?'disabled':''}>${p.stock>0?'ADICIONAR AO CARRINHO +':'ESGOTADO'}</button></div></article>`;}).join('');}
+function home(){return `<section class="hero"><div class="hero-copy"><span class="eyebrow">FORÇA É CONSTRUÇÃO.</span><h1>SEU TREINO.<br>SUA EVOLUÇÃO.<br><em>SEU PRÓXIMO<br>NÍVEL.</em></h1><p>Escolhas que acompanham a sua disciplina.<br>Conheça a linha BROWTH.</p><a class="button" href="#/catalogo">EXPLORAR PRODUTOS <span>↗</span></a> <a class="button secondary" href="#/encontre">FILTRAGEM →</a></div><div class="hero-art"><img src="/assets/whey.png" alt="Embalagem Whey Protein Browth" fetchpriority="high" width="1402" height="1122"><span class="hero-note">BROWTH ORIGINAL<br>FEITO PARA SUA ROTINA</span></div></section><section class="benefits" aria-label="Vantagens da loja"><div class="benefit"><b>01</b><div><strong>ESCOLHA DO SEU JEITO</strong><small>Pesos e categorias para sua rotina</small></div></div><div class="benefit"><b>02</b><div><strong>TUDO EM UM SÓ LUGAR</strong><small>Do catálogo aos seus pedidos</small></div></div><div class="benefit"><b>03</b><div><strong>COMPRA COM CLAREZA</strong><small>Confira o total antes de finalizar</small></div></div></section><section><div class="section-head"><div><span class="eyebrow">FILTRAGEM</span><h2>Qual é o seu próximo passo?</h2></div></div><div class="category-grid">${categoryNames.map((c,i)=>`<a class="category-tile" href="#/catalogo?categoria=${encodeURIComponent(c)}"><img src="/assets/${categoryImages[i]}.png" alt="" loading="lazy"><strong>${esc(c)}</strong><small>Explorar a linha →</small></a>`).join('')}</div></section><section><div class="section-head"><div><span class="eyebrow">SELEÇÃO BROWTH</span><h2>Essenciais da sua rotina.</h2></div><a href="#/catalogo">Ver todos os produtos ↗</a></div><div class="grid">${cards(['whey1kg','creatina300','pre300','hiper1kg'].map(id=>products.find(p=>p.id===id)).filter(Boolean))}</div></section><section class="banner"><div><span class="eyebrow">A CONSTÂNCIA FAZ A DIFERENÇA.</span><h2>O próximo passo é seu.</h2><p>Explore o catálogo e monte sua seleção.</p></div><a class="button secondary" href="#/catalogo">CONHECER A LINHA ↗</a></section>`;}
+function sortSelect(value,id='sort'){return `<select id="${id}" aria-label="Ordenar produtos">${sortOptions.map(([v,t])=>`<option value="${v}" ${value===v?'selected':''}>${t}</option>`).join('')}</select>`;}
+function manualSelect(name,title,options,params){return `<label>${title}<select name="${name}"><option value="">Todos</option>${options.map(([v,t])=>`<option value="${esc(v)}" ${params.get(name)===v?'selected':''}>${esc(t)}</option>`).join('')}</select></label>`;}
 function catalog(params){
- const category=params.get('categoria')||'',query=params.get('q')||'',sort=params.get('ordem')||'name';
- let list=products.filter(p=>(!category||p.category===category)&&normal(p.name+' '+p.category).includes(normal(query)));
- list.sort(sort==='price-up'?(a,b)=>a.price_cents-b.price_cents:sort==='price-down'?(a,b)=>b.price_cents-a.price_cents:(a,b)=>a.name.localeCompare(b.name,'pt-BR'));
- return `<div class="breadcrumb"><a href="#/">Início</a> / Catálogo</div><span class="eyebrow">ENCONTRE SEU PRÓXIMO NÍVEL</span><h1>${query?'Busca: '+esc(query):esc(category||'Nossos suplementos')}</h1><p><a class="button secondary" href="#/encontre">Encontre sua linha →</a></p><div class="filters"><a class="chip ${!category?'active':''}" href="#/catalogo">Todos</a>${categoryNames.map(c=>`<a class="chip ${category===c?'active':''}" href="#/catalogo?categoria=${encodeURIComponent(c)}">${esc(c)}</a>`).join('')}</div><div class="toolbar"><p>${list.length} produtos encontrados</p><select id="sort" aria-label="Ordenar produtos"><option value="name" ${sort==='name'?'selected':''}>Nome: A–Z</option><option value="price-up" ${sort==='price-up'?'selected':''}>Menor preço</option><option value="price-down" ${sort==='price-down'?'selected':''}>Maior preço</option></select></div>${list.length?`<div class="grid">${cards(list)}</div>`:'<div class="empty"><h2>Nenhum produto por aqui.</h2><p>Tente outro nome ou categoria.</p><a class="button" href="#/catalogo">Ver catálogo</a></div>'}`;
+ const sort=params.get('ordem')||'relevance',filters={category:params.get('categoria')||'',q:params.get('q')||'',brand:params.get('brand')||'',format:params.get('format')||'',flavor:params.get('flavor')||'',restrictions:params.getAll('restriction'),available:params.get('available')||'',rating:params.get('rating')||'',sort};
+ const result=filterByProfile(products,{budget:params.get('budget')||'all'},filters);
+ const cats=[...new Set(allProducts.map(p=>p.category))].map(x=>[x,x]);
+ const brands=[...new Set(allProducts.map(p=>attributes(p).brand).filter(Boolean))].map(x=>[x,x]);
+ return `<div class="breadcrumb"><a href="#/">Início</a> / Catálogo</div><h1>Nossos produtos.</h1><p><a class="button secondary" href="#/encontre">Filtragem →</a></p><details class="catalog-filter-panel" open><summary>Pesquisa e filtros</summary><form id="catalog-filters" class="manual-filters"><label class="full">Pesquisar<input name="q" type="search" value="${esc(filters.q)}" placeholder="Nome ou categoria"></label>${manualSelect('categoria','Categoria',cats,params)}${manualSelect('budget','Preço',questions[7][2],params)}${manualSelect('brand','Marca',brands,params)}${manualSelect('flavor','Sabor',questions[6][2].filter(x=>x[0]!=='all'),params)}${manualSelect('format','Formato',questions[5][2].filter(x=>x[0]!=='all'),params)}${manualSelect('available','Disponibilidade',[['yes','Em estoque']],params)}${manualSelect('rating','Avaliação mínima',[['3','3 estrelas'],['4','4 estrelas'],['5','5 estrelas']],params)}<fieldset class="manual-restrictions"><legend>Restrições alimentares</legend>${questions[3][2].filter(x=>x[0]!=='none').map(([v,t])=>`<label><input type="checkbox" name="restriction" value="${v}" ${filters.restrictions.includes(v)?'checked':''}> ${esc(t)}</label>`).join('')}</fieldset><div class="quiz-actions"><button type="submit">Aplicar filtros</button><a class="button secondary" href="#/catalogo">Limpar filtros</a></div></form></details><div class="toolbar"><p role="status">${result.matches.length} produtos encontrados</p>${sortSelect(sort)}</div>${result.warnings.map(x=>`<p class="notice">${esc(x)}</p>`).join('')}${result.matches.length?`<div class="grid">${cards(result.matches)}</div>`:'<div class="empty"><h2>Nenhum produto por aqui.</h2><p>Tente outra combinação de filtros.</p><a class="button" href="#/catalogo">Ver todos os produtos</a></div>'}`;
 }
-const quizSteps=[
- {title:'Produtos e preço',subtitle:'Escolha o que deseja ver no catálogo.',questions:[
-  ['category','Qual tipo de produto você procura?','Você pode explorar todas as linhas ou escolher uma categoria.',[['all','Todos os produtos'],['Whey','Whey protein'],['Creatina','Creatina'],['Pré-Treino','Pré-treino'],['Hipercalórico','Hipercalórico'],['Vitaminas','Vitaminas']]],
-  ['budget','Qual o preço máximo por produto?','O limite vale para cada produto.',[['all','Sem limite'],['7000','Até R$ 70'],['10000','Até R$ 100'],['15000','Até R$ 150'],['25000','Até R$ 250']]]
- ]},
- {title:'Ingredientes e preferências',subtitle:'Refine a busca usando as informações cadastradas nos produtos.',questions:[
-  ['diet','Qual preferência alimentar deseja aplicar?','Produtos sem informação suficiente ficam fora dos filtros específicos.',[['none','Sem preferência'],['vegetarian','Vegetariana'],['vegan','Vegana']]],
-  ['avoid','Qual ingrediente deseja excluir?','Também excluímos produtos que declaram possíveis traços desse ingrediente.',[['none','Não excluir ingredientes'],['milk','Leite'],['lactose','Lactose'],['gluten','Glúten']]],
-  ['caffeine','Deseja excluir produtos com cafeína?','O filtro exige informação cadastrada sobre estimulantes.',[['no','Não aplicar esse filtro'],['yes','Excluir cafeína']]]
- ]}
-];
-let quizStep=0,quizDraft={};
-function quizChoice(question,index){
- const [name,label,hint,options]=question;
- return `<fieldset class="quiz-question"><legend><span class="quiz-number">${String(index+1).padStart(2,'0')}</span>${esc(label)}</legend><p class="quiz-hint">${esc(hint)}</p><div class="quiz-options">${options.map(([value,title])=>`<label class="quiz-option"><input type="radio" name="${name}" value="${esc(value)}" ${quizDraft[name]===value?'checked':''}><span>${esc(title)}</span><span class="quiz-check" aria-hidden="true">✓</span></label>`).join('')}</div></fieldset>`;
-}
+let quizStep=0,quizDraft={},quizSort='relevance';
+function saveQuiz(){const q=questions[quizStep],form=$('#quiz-form');if(!form)return false;const selected=new FormData(form).getAll(q[0]);if(!selected.length)return false;quizDraft[q[0]]=q[3]?selected:selected[0];return true;}
+function quizSummary(answers){return questions.map(([name,title,options])=>{const chosen=Array.isArray(answers[name])?answers[name]:[answers[name]];return `<div><dt>${esc(({objective:'Objetivo',sport:'Esporte',category:'Categoria',restrictions:'Restrições',avoid:'Evitar',format:'Formato',flavor:'Sabor',budget:'Preço'})[name])}</dt><dd>${options.filter(([v])=>chosen.includes(v)).map(([,t])=>esc(t)).join(', ')}</dd></div>`;}).join('');}
 function quizPage(){
- if(quizAnswers){
-  const result=filterByProfile(products,quizAnswers,productLabels);
-  return `<div class="breadcrumb"><a href="#/">Início</a> / Filtragem</div><section class="quiz-intro"><span class="eyebrow">ESCOLHAS COM CLAREZA</span><h1>Seu resultado.</h1><p>Produtos encontrados pelo tipo, preço e ingredientes que você selecionou.</p></section><div class="quiz-actions"><button class="secondary" id="edit-quiz">Alterar respostas</button><a class="button secondary" href="#/catalogo">Ver catálogo completo</a></div><div class="notice" role="status">${result.warnings.map(esc).join('<br>')}</div>${result.matches.length?`<p class="fine">${result.matches.length} versões correspondentes. Ordem por menor preço.</p><div class="grid">${cards(result.matches)}</div>`:''}`;
- }
- const step=quizSteps[quizStep],offset=quizSteps.slice(0,quizStep).reduce((n,s)=>n+s.questions.length,0);
- return `<div class="breadcrumb"><a href="#/">Início</a> / Filtragem</div><section class="quiz-intro"><span class="eyebrow">FILTRAGEM</span><h1>Encontre produtos do seu jeito.</h1><p>Escolha os filtros em duas etapas para consultar o catálogo.</p></section><section class="quiz-shell" aria-label="Questionário de produtos"><div class="quiz-stage"><span>ETAPA ${quizStep+1} DE ${quizSteps.length}</span><strong>${esc(step.title)}</strong></div><div class="quiz-progress" role="progressbar" aria-label="Progresso do questionário" aria-valuenow="${quizStep+1}" aria-valuemin="0" aria-valuemax="${quizSteps.length}"><span style="width:${((quizStep+1)/quizSteps.length)*100}%"></span></div><form id="quiz-form" class="quiz-form"><div class="quiz-heading"><span class="eyebrow">SEUS FILTROS · ${String(quizStep+1).padStart(2,'0')}</span><h2>${esc(step.title)}</h2><p>${esc(step.subtitle)}</p></div>${step.questions.map((q,i)=>quizChoice(q,offset+i)).join('')}<div class="quiz-footer"><p class="fine">As respostas ficam só nesta página. Confira os ingredientes e restrições antes de escolher um produto.</p><div class="quiz-controls">${quizStep>0?'<button type="button" class="secondary" id="quiz-back">← Voltar</button>':''}${quizStep<quizSteps.length-1?'<button type="button" id="quiz-next">Continuar →</button>':'<button type="submit">Aplicar filtros →</button>'}</div></div></form></section>`;
+ if(quizAnswers){const result=filterByProfile(products,quizAnswers,{sort:quizSort});return `<div class="breadcrumb"><a href="#/">Início</a> / Filtragem</div><section class="quiz-intro"><span class="eyebrow">SUA SELEÇÃO</span><h1>Encontramos produtos que combinam com seus filtros.</h1><p>As preferências organizam os resultados. Restrições e faixa de preço são respeitadas; dados ausentes não são considerados compatíveis.</p></section><dl class="quiz-summary">${quizSummary(quizAnswers)}</dl><div class="quiz-actions"><button class="secondary" id="edit-quiz">Alterar respostas</button><button class="secondary" id="reset-quiz">Limpar filtros</button><a class="button secondary" href="#/catalogo">Ver todos os produtos</a></div><div class="toolbar"><p role="status">${result.matches.length} produtos encontrados</p>${sortSelect(quizSort,'quiz-sort')}</div>${result.warnings.map(x=>`<p class="notice">${esc(x)}</p>`).join('')}${result.matches.length?`<div class="grid">${cards(result.matches)}</div>`:'<div class="empty"><h2>Nenhum produto encontrado.</h2><p>Altere suas respostas para explorar outras opções.</p></div>'}`;}
+ const [name,title,options,multi]=questions[quizStep],selected=array(quizDraft[name]).length?quizDraft[name]:[quizDraft[name]];
+ return `<div class="breadcrumb"><a href="#/">Início</a> / Filtragem</div><section class="quiz-intro"><span class="eyebrow">FILTRAGEM</span><h1>Encontre produtos do seu jeito.</h1><p>Oito perguntas rápidas para explorar o catálogo pelas suas preferências.</p></section><section class="quiz-shell" aria-label="Questionário de produtos"><div class="quiz-stage"><span>Pergunta ${quizStep+1} de 8</span><button class="text" id="reset-quiz" type="button">Reiniciar</button></div><div class="quiz-progress" role="progressbar" aria-label="Progresso do questionário" aria-valuenow="${quizStep+1}" aria-valuemin="0" aria-valuemax="8"><span style="width:${(quizStep+1)*12.5}%"></span></div><form id="quiz-form" class="quiz-form quiz-enter"><fieldset class="quiz-question"><legend>${esc(title)}</legend><p class="quiz-hint">${multi?'Você pode marcar mais de uma opção.':name==='budget'?'Faixa de preço por produto.':name==='objective'||name==='sport'?'Essa preferência ajuda a organizar as categorias, sem indicar necessidade de consumo.':name==='format'||name==='flavor'||name==='category'?'Preferência de ordenação; outros produtos compatíveis também podem aparecer.':'Selecione uma opção para continuar.'}</p><div class="quiz-options">${options.map(([v,t])=>`<label class="quiz-option"><input type="${multi?'checkbox':'radio'}" name="${name}" value="${esc(v)}" ${selected.includes(v)?'checked':''}><span>${esc(t)}</span><span class="quiz-check" aria-hidden="true">✓</span></label>`).join('')}</div></fieldset><div class="quiz-controls"><button type="button" class="secondary" id="quiz-back" ${quizStep===0?'disabled':''}>← Voltar</button><button type="submit">${quizStep===7?'Ver resultados':'Continuar'} →</button></div></form></section>`;
 }
 function labelDetails(id){
  const info=productLabels[id];
@@ -124,10 +111,10 @@ function routeParts(){const [path,query='']=(location.hash.slice(1)||'/').split(
 async function render(){
  const current=++version,{path,params}=routeParts();main.setAttribute('aria-busy','true');checkoutQuote=null;
  try{
-  let content;
+  let content;products=allProducts;
   if(path==='/')content=home();
-  else if(path==='/catalogo')content=catalog(params);
-  else if(path==='/encontre')content=quizPage();
+  else if(path==='/catalogo'){if(!demo)products=await api('/products?'+new URLSearchParams({budget:params.get('budget')||'all',category:params.get('categoria')||''}));content=catalog(params);}
+  else if(path==='/encontre'){if(quizAnswers&&!demo)products=await api('/products?'+new URLSearchParams({budget:quizAnswers.budget||'all'}));content=quizPage();}
   else if(path.startsWith('/produto/'))content=productPage(decodeURIComponent(path.slice(9)));
   else if(path==='/entrar'||path==='/cadastro')content=user?empty('Você já entrou.','Sua conta está pronta para continuar.','Minha conta','#/conta'):loginPage(path==='/cadastro');
   else if(path==='/carrinho'){await loadCart();content=cartPage();}
@@ -173,12 +160,8 @@ main.addEventListener('click',e=>{
  const button=e.target.closest('button');if(!button || (button.type==='submit' && button.closest('form')))return;
  busy(button,async()=>{
   if(button.id==='edit-quiz'){quizDraft={...quizAnswers};quizAnswers=null;quizStep=0;await render();}
-  else if(button.id==='quiz-back'||button.id==='quiz-next'){
-   const form=$('#quiz-form');if(!form)return;
-   if(button.id==='quiz-next'&&![...form.querySelectorAll('.quiz-question')].every(q=>q.querySelector('input:checked'))){notice('Selecione uma opção em cada pergunta para continuar.');[...form.querySelectorAll('.quiz-question')].find(q=>!q.querySelector('input:checked'))?.querySelector('input')?.focus();return;}
-   Object.assign(quizDraft,Object.fromEntries(new FormData(form)));
-   quizStep+=button.id==='quiz-next'?1:-1;await render();main.focus({preventScroll:true});
-  }
+  else if(button.id==='reset-quiz'){quizAnswers=null;quizDraft={};quizStep=0;quizSort='relevance';await render();}
+  else if(button.id==='quiz-back'){saveQuiz();quizStep=Math.max(0,quizStep-1);await render();$('#quiz-form legend')?.scrollIntoView({block:'center',behavior:'smooth'});main.focus({preventScroll:true});}
   else if(button.dataset.add)await add(button.dataset.add);
   else if(button.dataset.remove){await setQuantity(button.dataset.remove,0);await render();}
   else if(button.id==='google'){await Auth.google();await mergeGuest();location.hash='/conta';}
@@ -197,6 +180,8 @@ main.addEventListener('click',e=>{
  });
 });
 main.addEventListener('change',e=>{
+ if(e.target.closest('#quiz-form')&&e.target.type==='checkbox'){const inputs=[...$('#quiz-form').querySelectorAll('input')];if(e.target.checked&&e.target.value==='none')inputs.forEach(x=>{if(x!==e.target)x.checked=false;});else if(e.target.checked)inputs.find(x=>x.value==='none').checked=false;}
+ if(e.target.id==='quiz-sort'){quizSort=e.target.value;render();}
  if(e.target.id==='sort'){const {params}=routeParts();params.set('ordem',e.target.value);location.hash='/catalogo?'+params;}
  if(e.target.dataset.quantity)busy(e.target,async()=>{try{await setQuantity(e.target.dataset.quantity,Number(e.target.value));}finally{await render();}});
 });
@@ -204,9 +189,11 @@ main.addEventListener('submit',e=>{
  e.preventDefault();const form=e.target,button=form.querySelector('button[type="submit"]')||form.querySelector('button');
  busy(button,async()=>{
   const data=Object.fromEntries(new FormData(form));
+  if(form.id==='catalog-filters'){const params=new URLSearchParams();for(const [key,value] of new FormData(form))if(value)params.append(key,value);location.hash='/catalogo?'+params;return;}
   if(form.id==='quiz-form'){
-   if(![...form.querySelectorAll('.quiz-question')].every(q=>q.querySelector('input:checked'))){notice('Selecione uma opção em cada pergunta.');return;}
-   quizAnswers={...quizDraft,...data};quizDraft={};quizStep=0;await render();main.focus({preventScroll:true});return;
+   if(!saveQuiz()){notice('Selecione uma opção para continuar.');form.querySelector('input')?.focus();return;}
+   if(quizStep<7)quizStep++;else{quizAnswers=structuredClone(quizDraft);quizSort='relevance';}
+   await render();$('#quiz-form legend')?.scrollIntoView({block:'center',behavior:'smooth'});main.focus({preventScroll:true});return;
   }
   if(form.id==='buy-form')await add(form.dataset.product,Number(data.quantity));
   if(form.id==='auth-form'){
@@ -234,11 +221,12 @@ async function start(){
   if(demo){products=await fetch('/demo-products.json').then(r=>r.json());$('#mode').hidden=false;$('#mode').textContent='DEMONSTRAÇÃO · Produtos e estoque ilustrativos. Login, pedidos e pagamentos desativados.';}
   else{
    [config,products]=await Promise.all([api('/config'),api('/products')]);
+   Object.assign(productLabels,Object.fromEntries(products.filter(p=>attributes(p).composition).map(p=>[p.id,{...attributes(p),demo_complete:true}])));
    if(config.firebase.apiKey&&config.firebase.projectId){
     try{await Auth.initialize(config.firebase,u=>{user=u;if(loaded){cart=[];count();render();}});authReady=true;}catch{notice('Login indisponível. Verifique sua conexão e a configuração do Firebase.');}
    }
   }
-  await loadCart();loaded=true;await render();
+  allProducts=products;await loadCart();loaded=true;await render();
  }catch(e){main.innerHTML=`<div class="empty"><h1>A loja ainda não está disponível.</h1><p>${esc(Auth.message(e))}</p><button id="reload-app">Tentar novamente</button> <a class="button secondary" href="/?demo=1">Visualizar demonstração</a></div>`;$('#reload-app').onclick=()=>location.reload();}
 }
 start();

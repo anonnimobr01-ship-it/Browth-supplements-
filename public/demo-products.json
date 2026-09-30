@@ -7,7 +7,65 @@
     "price_cents": 3990,
     "description": "Whey Protein Browth de 300g.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "120 kcal"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "23 g"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "3 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "2 g"
+        }
+      ],
+      "serving": "porção de 30 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": false
+      },
+      "free_from": {
+        "milk": false,
+        "lactose": false,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/whey300.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [],
+      "flavor_names": [],
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ]
+    }
   },
   {
     "id": "whey750",
@@ -17,7 +75,65 @@
     "price_cents": 7490,
     "description": "Whey Protein Browth de 750g.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "120 kcal"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "23 g"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "3 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "2 g"
+        }
+      ],
+      "serving": "porção de 30 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": false
+      },
+      "free_from": {
+        "milk": false,
+        "lactose": false,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/whey750.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [],
+      "flavor_names": [],
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ]
+    }
   },
   {
     "id": "whey1kg",
@@ -27,7 +143,65 @@
     "price_cents": 9990,
     "description": "Whey Protein Browth de 1kg.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "120 kcal"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "23 g"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "3 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "2 g"
+        }
+      ],
+      "serving": "porção de 30 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": false
+      },
+      "free_from": {
+        "milk": false,
+        "lactose": false,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/whey1kg.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [],
+      "flavor_names": [],
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ]
+    }
   },
   {
     "id": "whey3kg",
@@ -37,7 +211,65 @@
     "price_cents": 24990,
     "description": "Whey Protein Browth de 3kg.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "120 kcal"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "23 g"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "3 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "2 g"
+        }
+      ],
+      "serving": "porção de 30 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": false
+      },
+      "free_from": {
+        "milk": false,
+        "lactose": false,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/whey3kg.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [],
+      "flavor_names": [],
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ]
+    }
   },
   {
     "id": "creatina300",
@@ -47,7 +279,54 @@
     "price_cents": 7990,
     "description": "Creatina Browth de 300g.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Creatina monohidratada.",
+      "allergens": {
+        "contains": [],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+      ],
+      "nutrition": [
+        {
+          "name": "Creatina",
+          "amount": "3 g"
+        }
+      ],
+      "serving": "porção de 3 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/creatina300.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "unflavored"
+      ],
+      "flavor_names": [
+        "Sem sabor"
+      ],
+      "contains_sugar": false,
+      "objectives": [
+        "performance"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ]
+    }
   },
   {
     "id": "creatina600",
@@ -57,7 +336,54 @@
     "price_cents": 13990,
     "description": "Creatina Browth de 600g.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Creatina monohidratada.",
+      "allergens": {
+        "contains": [],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+      ],
+      "nutrition": [
+        {
+          "name": "Creatina",
+          "amount": "3 g"
+        }
+      ],
+      "serving": "porção de 3 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/creatina600.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "unflavored"
+      ],
+      "flavor_names": [
+        "Sem sabor"
+      ],
+      "contains_sugar": false,
+      "objectives": [
+        "performance"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ]
+    }
   },
   {
     "id": "creatina1kg",
@@ -67,7 +393,54 @@
     "price_cents": 19990,
     "description": "Creatina Browth de 1kg.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Creatina monohidratada.",
+      "allergens": {
+        "contains": [],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+      ],
+      "nutrition": [
+        {
+          "name": "Creatina",
+          "amount": "3 g"
+        }
+      ],
+      "serving": "porção de 3 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/creatina1kg.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "unflavored"
+      ],
+      "flavor_names": [
+        "Sem sabor"
+      ],
+      "contains_sugar": false,
+      "objectives": [
+        "performance"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ]
+    }
   },
   {
     "id": "creatina2kg",
@@ -77,7 +450,54 @@
     "price_cents": 34990,
     "description": "Creatina Browth de 2kg.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Creatina monohidratada.",
+      "allergens": {
+        "contains": [],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Destinado a adultos. Grávidas, lactantes e pessoas com condições de saúde devem buscar orientação profissional."
+      ],
+      "nutrition": [
+        {
+          "name": "Creatina",
+          "amount": "3 g"
+        }
+      ],
+      "serving": "porção de 3 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/creatina2kg.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "unflavored"
+      ],
+      "flavor_names": [
+        "Sem sabor"
+      ],
+      "contains_sugar": false,
+      "objectives": [
+        "performance"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ]
+    }
   },
   {
     "id": "pre300",
@@ -87,7 +507,58 @@
     "price_cents": 8990,
     "description": "Pré-Treino Browth de 300g.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
+      "allergens": {
+        "contains": [],
+        "may_contain": [
+          "soy"
+        ]
+      },
+      "restrictions": [
+        "Contém cafeína. Não destinado a crianças, gestantes ou lactantes. Pessoas sensíveis à cafeína devem evitar."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "30 kcal"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "7 g"
+        },
+        {
+          "name": "Cafeína",
+          "amount": "150 mg"
+        }
+      ],
+      "serving": "porção de 10 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [
+        "caffeine"
+      ],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/pre300.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": true,
+      "flavors": [],
+      "flavor_names": [],
+      "objectives": [
+        "performance"
+      ],
+      "sports": []
+    }
   },
   {
     "id": "pre600",
@@ -97,7 +568,58 @@
     "price_cents": 15990,
     "description": "Pré-Treino Browth de 600g.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
+      "allergens": {
+        "contains": [],
+        "may_contain": [
+          "soy"
+        ]
+      },
+      "restrictions": [
+        "Contém cafeína. Não destinado a crianças, gestantes ou lactantes. Pessoas sensíveis à cafeína devem evitar."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "30 kcal"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "7 g"
+        },
+        {
+          "name": "Cafeína",
+          "amount": "150 mg"
+        }
+      ],
+      "serving": "porção de 10 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [
+        "caffeine"
+      ],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/pre600.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": true,
+      "flavors": [],
+      "flavor_names": [],
+      "objectives": [
+        "performance"
+      ],
+      "sports": []
+    }
   },
   {
     "id": "pre1kg",
@@ -107,7 +629,58 @@
     "price_cents": 22990,
     "description": "Pré-Treino Browth de 1kg.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
+      "allergens": {
+        "contains": [],
+        "may_contain": [
+          "soy"
+        ]
+      },
+      "restrictions": [
+        "Contém cafeína. Não destinado a crianças, gestantes ou lactantes. Pessoas sensíveis à cafeína devem evitar."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "30 kcal"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "7 g"
+        },
+        {
+          "name": "Cafeína",
+          "amount": "150 mg"
+        }
+      ],
+      "serving": "porção de 10 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [
+        "caffeine"
+      ],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/pre1kg.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": true,
+      "flavors": [],
+      "flavor_names": [],
+      "objectives": [
+        "performance"
+      ],
+      "sports": []
+    }
   },
   {
     "id": "hiper1kg",
@@ -117,7 +690,68 @@
     "price_cents": 9990,
     "description": "Hipercalórico Browth de 1kg.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": [
+          "gluten"
+        ]
+      },
+      "restrictions": [
+        "Contém leite e soja. Pode conter glúten. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "390 kcal"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "70 g"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "15 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "5 g"
+        }
+      ],
+      "serving": "porção de 100 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": false
+      },
+      "free_from": {
+        "milk": false,
+        "lactose": false,
+        "gluten": false
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/hiper1kg.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "chocolate"
+      ],
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "objectives": [
+        "practical",
+        "protein"
+      ],
+      "sports": []
+    }
   },
   {
     "id": "hiper2kg",
@@ -127,7 +761,68 @@
     "price_cents": 17990,
     "description": "Hipercalórico Browth de 2kg.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": [
+          "gluten"
+        ]
+      },
+      "restrictions": [
+        "Contém leite e soja. Pode conter glúten. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "390 kcal"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "70 g"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "15 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "5 g"
+        }
+      ],
+      "serving": "porção de 100 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": false
+      },
+      "free_from": {
+        "milk": false,
+        "lactose": false,
+        "gluten": false
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/hiper2kg.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "chocolate"
+      ],
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "objectives": [
+        "practical",
+        "protein"
+      ],
+      "sports": []
+    }
   },
   {
     "id": "hiper3kg",
@@ -137,7 +832,68 @@
     "price_cents": 24990,
     "description": "Hipercalórico Browth de 3kg.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": [
+          "gluten"
+        ]
+      },
+      "restrictions": [
+        "Contém leite e soja. Pode conter glúten. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "390 kcal"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "70 g"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "15 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "5 g"
+        }
+      ],
+      "serving": "porção de 100 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": false
+      },
+      "free_from": {
+        "milk": false,
+        "lactose": false,
+        "gluten": false
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/hiper3kg.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "chocolate"
+      ],
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "objectives": [
+        "practical",
+        "protein"
+      ],
+      "sports": []
+    }
   },
   {
     "id": "vitaminaMorango",
@@ -147,7 +903,58 @@
     "price_cents": 8990,
     "description": "Vitaminas Browth sabor morango.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de morango.",
+      "allergens": {
+        "contains": [],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Não substitui uma alimentação variada. Pessoas com condições de saúde devem buscar orientação profissional."
+      ],
+      "nutrition": [
+        {
+          "name": "Vitamina C",
+          "amount": "45 mg"
+        },
+        {
+          "name": "Vitamina B6",
+          "amount": "1,3 mg"
+        },
+        {
+          "name": "Vitamina B12",
+          "amount": "2,4 µg"
+        }
+      ],
+      "serving": "porção de 5 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/vitaminaMorango.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "strawberry"
+      ],
+      "flavor_names": [
+        "Morango"
+      ],
+      "objectives": [
+        "vitamins"
+      ],
+      "sports": []
+    }
   },
   {
     "id": "vitaminaLaranja",
@@ -157,7 +964,58 @@
     "price_cents": 8990,
     "description": "Vitaminas Browth sabor laranja.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de laranja.",
+      "allergens": {
+        "contains": [],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Não substitui uma alimentação variada. Pessoas com condições de saúde devem buscar orientação profissional."
+      ],
+      "nutrition": [
+        {
+          "name": "Vitamina C",
+          "amount": "45 mg"
+        },
+        {
+          "name": "Vitamina B6",
+          "amount": "1,3 mg"
+        },
+        {
+          "name": "Vitamina B12",
+          "amount": "2,4 µg"
+        }
+      ],
+      "serving": "porção de 5 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/vitaminaLaranja.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "fruit"
+      ],
+      "flavor_names": [
+        "Laranja"
+      ],
+      "objectives": [
+        "vitamins"
+      ],
+      "sports": []
+    }
   },
   {
     "id": "vitaminaLimao",
@@ -167,6 +1025,57 @@
     "price_cents": 8990,
     "description": "Vitaminas Browth sabor limão.",
     "stock": 50,
-    "active": true
+    "active": true,
+    "catalog_attributes": {
+      "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de limão.",
+      "allergens": {
+        "contains": [],
+        "may_contain": []
+      },
+      "restrictions": [
+        "Não substitui uma alimentação variada. Pessoas com condições de saúde devem buscar orientação profissional."
+      ],
+      "nutrition": [
+        {
+          "name": "Vitamina C",
+          "amount": "45 mg"
+        },
+        {
+          "name": "Vitamina B6",
+          "amount": "1,3 mg"
+        },
+        {
+          "name": "Vitamina B12",
+          "amount": "2,4 µg"
+        }
+      ],
+      "serving": "porção de 5 g",
+      "diet": {
+        "vegetarian": true,
+        "vegan": true
+      },
+      "free_from": {
+        "milk": true,
+        "lactose": true,
+        "gluten": true
+      },
+      "stimulants": [],
+      "demo_complete": true,
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "back_image": "/assets/backs/vitaminaLimao.svg",
+      "brand": "BROWTH",
+      "format": "powder",
+      "contains_caffeine": false,
+      "flavors": [
+        "fruit"
+      ],
+      "flavor_names": [
+        "Limão"
+      ],
+      "objectives": [
+        "vitamins"
+      ],
+      "sports": []
+    }
   }
 ]

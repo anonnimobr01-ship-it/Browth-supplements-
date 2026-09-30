@@ -1,36 +1,36 @@
 import assert from 'node:assert/strict';
-import {readFileSync,existsSync} from 'node:fs';
-import {filterByProfile} from '../public/js/profile-filter.js';
-const read=name=>JSON.parse(readFileSync(new URL('../public/'+name,import.meta.url)));
-const products=read('demo-products.json'),labels=read('product-labels.json');
-assert.deepEqual(products.map(p=>p.id).sort(),Object.keys(labels).sort());
-for(const p of products)assert(existsSync(new URL('../public'+labels[p.id].back_image,import.meta.url)));
-const base={category:'all',budget:'all',diet:'none',avoid:'none',caffeine:'no'};
-const ids=answers=>filterByProfile(products,{...base,...answers},labels).matches.map(p=>p.id);
-assert.equal(ids({}).length,17);
-assert.deepEqual(ids({age:'minor',health:'yes'}),ids({}));
-for(const category of ['Whey','Creatina','Pré-Treino','Hipercalórico','Vitaminas']){
- const found=filterByProfile(products,{...base,category},labels).matches;
- assert(found.length>0&&found.every(p=>p.category===category));
-}
-const cheap=filterByProfile(products,{...base,budget:'7000'},labels).matches;
-assert(cheap.length>0&&cheap.every(p=>p.price_cents<=7000));
-assert(cheap.every((p,i)=>i===0||cheap[i-1].price_cents<=p.price_cents));
-for(const avoid of ['milk','lactose','gluten']){
- const found=filterByProfile(products,{...base,avoid},labels).matches;
- assert(found.length>0&&found.every(p=>labels[p.id].free_from[avoid]===true));
-}
-const vegan=filterByProfile(products,{...base,diet:'vegan'},labels).matches;
-assert(vegan.length>0&&vegan.every(p=>labels[p.id].diet.vegan===true));
-assert(!ids({caffeine:'yes'}).some(id=>labels[id].stimulants.includes('caffeine')));
-assert.deepEqual(ids({category:'Whey',diet:'vegan'}),[]);
-const missing=structuredClone(labels);delete missing.creatina300;
-assert(!filterByProfile(products,{...base,avoid:'milk'},missing).matches.some(p=>p.id==='creatina300'));
-const conflicting=structuredClone(labels);conflicting.creatina300.allergens.may_contain=['milk'];
-assert(!filterByProfile(products,{...base,avoid:'milk'},conflicting).matches.some(p=>p.id==='creatina300'));
-const unknown=structuredClone(labels);delete unknown.creatina300.stimulants;
-assert(!filterByProfile(products,{...base,caffeine:'yes'},unknown).matches.some(p=>p.id==='creatina300'));
-const hidden=[...products,{...products[0],id:'hidden',active:false},{...products[0],id:'out',stock:0}];
-assert.equal(filterByProfile(hidden,base,labels).matches.length,17);
-assert.deepEqual(ids({budget:'invalid'}),[]);
-console.log('Filtro de catálogo: categorias, preço, ingredientes e dados ausentes OK');
+import fs from 'node:fs';
+// Load ESM without requiring changes to the PHP project's package configuration.
+const code=fs.readFileSync(new URL('../public/js/profile-filter.js',import.meta.url),'utf8');
+const {filterByProfile,satisfies,questions,priceBounds}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
+const products=JSON.parse(fs.readFileSync(new URL('../public/demo-products.json',import.meta.url),'utf8'));
+assert.equal(questions.length,8);
+assert.equal(questions.filter(q=>q[3]).length,2);
+assert.equal(filterByProfile(products,{}).matches.length,17);
+const result=filterByProfile(products,{category:'Whey',objective:'protein',restrictions:['lactose'],budget:'all'});
+assert(!result.matches.some(p=>p.category==='Whey'));
+assert(result.warnings.some(s=>s.includes('categoria')));
+assert.equal(filterByProfile(products,{restrictions:['vegan','gluten'],avoid:['caffeine'],budget:'5000-10000'}).matches.length,4);
+assert.equal(filterByProfile(products,{avoid:['sugar']}).matches.length,4);
+assert.equal(filterByProfile(products,{budget:'0-5000'}).matches.length,1);
+assert(filterByProfile(products,{category:'Whey',objective:'protein',format:'powder'}).matches.slice(0,4).every(p=>p.category==='Whey'));
+assert.equal(filterByProfile(products,{flavor:'strawberry'}).matches[0].id,'vitaminaMorango');
+assert.equal(filterByProfile(products,{sport:'strength'}).matches[0].category,'Creatina');
+assert.equal(filterByProfile(products,{}, {category:'Creatina',sort:'price-down'}).matches[0].id,'creatina2kg');
+assert.equal(filterByProfile(products,{}, {q:'PRE treino'}).matches.length,3); // punctuation and accents are normalized
+assert.equal(filterByProfile(products,{}, {q:'vitaminas'}).matches.length,3);
+assert.equal(filterByProfile(products,{}, {brand:'BROWTH',format:'powder'}).matches.length,17);
+assert.equal(filterByProfile(products,{}, {rating:'4'}).matches.length,0);
+assert.equal(filterByProfile(products,{}, {sort:'sales'}).warnings.length,1);
+const unknown={id:'x',name:'Unknown',category:'Whey',price_cents:5000,stock:0,active:true};
+assert.equal(filterByProfile([unknown],{}).matches.length,1);
+assert.equal(filterByProfile([unknown],{}, {available:'yes'}).matches.length,0);
+assert.equal(satisfies(unknown,['lactose']),false);
+assert.equal(satisfies(unknown,[],['sugar']),false);
+assert.equal(satisfies(unknown,['vegan']),false);
+const conflict={...unknown,catalog_attributes:{free_from:{gluten:true},allergens:{contains:[],may_contain:['gluten']}}};
+assert.equal(satisfies(conflict,['gluten']),false);
+assert.equal(filterByProfile([{...unknown,active:false}],{}).matches.length,0);
+assert.equal(filterByProfile(products,{budget:'invalid'}).matches.length,0);
+assert.deepEqual(priceBounds('25000-plus'),[25001,Infinity]);
+console.log('8 perguntas, restrições combinadas, dados ausentes, ordenação e filtros manuais: OK');
