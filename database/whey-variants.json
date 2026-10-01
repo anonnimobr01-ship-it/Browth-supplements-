@@ -1,0 +1,678 @@
+[
+  {
+    "id": "whey300",
+    "name": "WHEY BROWTH 300G — CHOCOLATE",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 300 g, sabor chocolate.",
+    "image": "/assets/whey300-chocolate.webp",
+    "price_cents": 3990,
+    "stock": 49,
+    "active": true,
+    "catalog_attributes": {
+      "diet": {
+        "vegan": false,
+        "vegetarian": true
+      },
+      "brand": "BROWTH",
+      "format": "powder",
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "flavors": [
+        "chocolate"
+      ],
+      "serving": "porção de 30 g",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": []
+      },
+      "free_from": {
+        "milk": false,
+        "gluten": true,
+        "lactose": false
+      },
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "120 kcal"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "23 g"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "3 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "2 g"
+        }
+      ],
+      "back_image": "/assets/backs/whey300.svg",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "stimulants": [],
+      "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "rating_count": 0,
+      "restrictions": [
+        "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "demo_complete": true,
+      "contains_caffeine": false,
+      "family": "whey-protein",
+      "weight_grams": 300,
+      "size": "300 g",
+      "variant": "300 g / Chocolate"
+    }
+  },
+  {
+    "id": "whey300-baunilha",
+    "name": "WHEY BROWTH 300G — BAUNILHA",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 300 g, sabor baunilha.",
+    "image": "/assets/whey300-baunilha.webp",
+    "price_cents": 3990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "format": "powder",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "family": "whey-protein",
+      "weight_grams": 300,
+      "size": "300 g",
+      "flavors": [
+        "vanilla"
+      ],
+      "flavor_names": [
+        "Baunilha"
+      ],
+      "variant": "300 g / Baunilha",
+      "diet": {
+        "vegan": false
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ]
+      },
+      "free_from": {
+        "milk": false
+      },
+      "demo_complete": false,
+      "rating_count": 0,
+      "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    }
+  },
+  {
+    "id": "whey300-morango",
+    "name": "WHEY BROWTH 300G — MORANGO",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 300 g, sabor morango.",
+    "image": "/assets/whey300-morango.webp",
+    "price_cents": 3990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "format": "powder",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "family": "whey-protein",
+      "weight_grams": 300,
+      "size": "300 g",
+      "flavors": [
+        "strawberry"
+      ],
+      "flavor_names": [
+        "Morango"
+      ],
+      "variant": "300 g / Morango",
+      "diet": {
+        "vegan": false
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ]
+      },
+      "free_from": {
+        "milk": false
+      },
+      "demo_complete": false,
+      "rating_count": 0,
+      "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    }
+  },
+  {
+    "id": "whey750",
+    "name": "WHEY BROWTH 750G — CHOCOLATE",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 750 g, sabor chocolate.",
+    "image": "/assets/whey750-chocolate.webp",
+    "price_cents": 7490,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "diet": {
+        "vegan": false,
+        "vegetarian": true
+      },
+      "brand": "BROWTH",
+      "format": "powder",
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "flavors": [
+        "chocolate"
+      ],
+      "serving": "porção de 30 g",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": []
+      },
+      "free_from": {
+        "milk": false,
+        "gluten": true,
+        "lactose": false
+      },
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "120 kcal"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "23 g"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "3 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "2 g"
+        }
+      ],
+      "back_image": "/assets/backs/whey750.svg",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "stimulants": [],
+      "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "rating_count": 0,
+      "restrictions": [
+        "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "demo_complete": true,
+      "contains_caffeine": false,
+      "family": "whey-protein",
+      "weight_grams": 750,
+      "size": "750 g",
+      "variant": "750 g / Chocolate"
+    }
+  },
+  {
+    "id": "whey750-baunilha",
+    "name": "WHEY BROWTH 750G — BAUNILHA",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 750 g, sabor baunilha.",
+    "image": "/assets/whey750-baunilha.webp",
+    "price_cents": 7490,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "format": "powder",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "family": "whey-protein",
+      "weight_grams": 750,
+      "size": "750 g",
+      "flavors": [
+        "vanilla"
+      ],
+      "flavor_names": [
+        "Baunilha"
+      ],
+      "variant": "750 g / Baunilha",
+      "diet": {
+        "vegan": false
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ]
+      },
+      "free_from": {
+        "milk": false
+      },
+      "demo_complete": false,
+      "rating_count": 0,
+      "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    }
+  },
+  {
+    "id": "whey750-morango",
+    "name": "WHEY BROWTH 750G — MORANGO",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 750 g, sabor morango.",
+    "image": "/assets/whey750-morango.webp",
+    "price_cents": 7490,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "format": "powder",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "family": "whey-protein",
+      "weight_grams": 750,
+      "size": "750 g",
+      "flavors": [
+        "strawberry"
+      ],
+      "flavor_names": [
+        "Morango"
+      ],
+      "variant": "750 g / Morango",
+      "diet": {
+        "vegan": false
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ]
+      },
+      "free_from": {
+        "milk": false
+      },
+      "demo_complete": false,
+      "rating_count": 0,
+      "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    }
+  },
+  {
+    "id": "whey1kg",
+    "name": "WHEY BROWTH 1KG — CHOCOLATE",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 1 kg, sabor chocolate.",
+    "image": "/assets/whey1kg-chocolate.webp",
+    "price_cents": 9990,
+    "stock": 49,
+    "active": true,
+    "catalog_attributes": {
+      "diet": {
+        "vegan": false,
+        "vegetarian": true
+      },
+      "brand": "BROWTH",
+      "format": "powder",
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "flavors": [
+        "chocolate"
+      ],
+      "serving": "porção de 30 g",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": []
+      },
+      "free_from": {
+        "milk": false,
+        "gluten": true,
+        "lactose": false
+      },
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "120 kcal"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "23 g"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "3 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "2 g"
+        }
+      ],
+      "back_image": "/assets/backs/whey1kg.svg",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "stimulants": [],
+      "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "rating_count": 0,
+      "restrictions": [
+        "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "demo_complete": true,
+      "contains_caffeine": false,
+      "family": "whey-protein",
+      "weight_grams": 1000,
+      "size": "1 kg",
+      "variant": "1 kg / Chocolate"
+    }
+  },
+  {
+    "id": "whey1kg-baunilha",
+    "name": "WHEY BROWTH 1KG — BAUNILHA",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 1 kg, sabor baunilha.",
+    "image": "/assets/whey1kg-baunilha.webp",
+    "price_cents": 9990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "format": "powder",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "family": "whey-protein",
+      "weight_grams": 1000,
+      "size": "1 kg",
+      "flavors": [
+        "vanilla"
+      ],
+      "flavor_names": [
+        "Baunilha"
+      ],
+      "variant": "1 kg / Baunilha",
+      "diet": {
+        "vegan": false
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ]
+      },
+      "free_from": {
+        "milk": false
+      },
+      "demo_complete": false,
+      "rating_count": 0,
+      "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    }
+  },
+  {
+    "id": "whey1kg-morango",
+    "name": "WHEY BROWTH 1KG — MORANGO",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 1 kg, sabor morango.",
+    "image": "/assets/whey1kg-morango.webp",
+    "price_cents": 9990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "format": "powder",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "family": "whey-protein",
+      "weight_grams": 1000,
+      "size": "1 kg",
+      "flavors": [
+        "strawberry"
+      ],
+      "flavor_names": [
+        "Morango"
+      ],
+      "variant": "1 kg / Morango",
+      "diet": {
+        "vegan": false
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ]
+      },
+      "free_from": {
+        "milk": false
+      },
+      "demo_complete": false,
+      "rating_count": 0,
+      "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    }
+  },
+  {
+    "id": "whey3kg",
+    "name": "WHEY BROWTH 3KG — CHOCOLATE",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 3 kg, sabor chocolate.",
+    "image": "/assets/whey3kg-chocolate.webp",
+    "price_cents": 24990,
+    "stock": 49,
+    "active": true,
+    "catalog_attributes": {
+      "diet": {
+        "vegan": false,
+        "vegetarian": true
+      },
+      "brand": "BROWTH",
+      "format": "powder",
+      "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "flavors": [
+        "chocolate"
+      ],
+      "serving": "porção de 30 g",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy"
+        ],
+        "may_contain": []
+      },
+      "free_from": {
+        "milk": false,
+        "gluten": true,
+        "lactose": false
+      },
+      "nutrition": [
+        {
+          "name": "Valor energético",
+          "amount": "120 kcal"
+        },
+        {
+          "name": "Proteínas",
+          "amount": "23 g"
+        },
+        {
+          "name": "Carboidratos",
+          "amount": "3 g"
+        },
+        {
+          "name": "Gorduras totais",
+          "amount": "2 g"
+        }
+      ],
+      "back_image": "/assets/backs/whey3kg.svg",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "stimulants": [],
+      "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+      "flavor_names": [
+        "Chocolate"
+      ],
+      "rating_count": 0,
+      "restrictions": [
+        "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+      ],
+      "demo_complete": true,
+      "contains_caffeine": false,
+      "family": "whey-protein",
+      "weight_grams": 3000,
+      "size": "3 kg",
+      "variant": "3 kg / Chocolate"
+    }
+  },
+  {
+    "id": "whey3kg-baunilha",
+    "name": "WHEY BROWTH 3KG — BAUNILHA",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 3 kg, sabor baunilha.",
+    "image": "/assets/whey3kg-baunilha.webp",
+    "price_cents": 24990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "format": "powder",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "family": "whey-protein",
+      "weight_grams": 3000,
+      "size": "3 kg",
+      "flavors": [
+        "vanilla"
+      ],
+      "flavor_names": [
+        "Baunilha"
+      ],
+      "variant": "3 kg / Baunilha",
+      "diet": {
+        "vegan": false
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ]
+      },
+      "free_from": {
+        "milk": false
+      },
+      "demo_complete": false,
+      "rating_count": 0,
+      "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    }
+  },
+  {
+    "id": "whey3kg-morango",
+    "name": "WHEY BROWTH 3KG — MORANGO",
+    "category": "Whey",
+    "description": "Whey Protein Browth de 3 kg, sabor morango.",
+    "image": "/assets/whey3kg-morango.webp",
+    "price_cents": 24990,
+    "stock": 50,
+    "active": true,
+    "catalog_attributes": {
+      "brand": "BROWTH",
+      "format": "powder",
+      "objectives": [
+        "protein",
+        "recovery"
+      ],
+      "sports": [
+        "strength",
+        "cross"
+      ],
+      "family": "whey-protein",
+      "weight_grams": 3000,
+      "size": "3 kg",
+      "flavors": [
+        "strawberry"
+      ],
+      "flavor_names": [
+        "Morango"
+      ],
+      "variant": "3 kg / Morango",
+      "diet": {
+        "vegan": false
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ]
+      },
+      "free_from": {
+        "milk": false
+      },
+      "demo_complete": false,
+      "rating_count": 0,
+      "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    }
+  }
+]

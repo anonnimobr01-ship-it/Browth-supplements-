@@ -1,6 +1,20 @@
 {
   "whey300": {
-    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+    "diet": {
+      "vegan": false,
+      "vegetarian": true
+    },
+    "brand": "BROWTH",
+    "format": "powder",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "flavors": [
+      "chocolate"
+    ],
+    "serving": "porção de 30 g",
     "allergens": {
       "contains": [
         "milk",
@@ -8,9 +22,11 @@
       ],
       "may_contain": []
     },
-    "restrictions": [
-      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
-    ],
+    "free_from": {
+      "milk": false,
+      "gluten": true,
+      "lactose": false
+    },
     "nutrition": [
       {
         "name": "Valor energético",
@@ -29,23 +45,43 @@
         "amount": "2 g"
       }
     ],
-    "serving": "porção de 30 g",
-    "diet": {
-      "vegetarian": true,
-      "vegan": false
-    },
-    "free_from": {
-      "milk": false,
-      "lactose": false,
-      "gluten": true
-    },
+    "back_image": "/assets/backs/whey300.svg",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
     "stimulants": [],
+    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+    "flavor_names": [
+      "Chocolate"
+    ],
+    "rating_count": 0,
+    "restrictions": [
+      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
     "demo_complete": true,
-    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/whey300.svg"
+    "contains_caffeine": false,
+    "family": "whey-protein",
+    "weight_grams": 300,
+    "size": "300 g",
+    "variant": "300 g / Chocolate"
   },
   "whey750": {
-    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+    "diet": {
+      "vegan": false,
+      "vegetarian": true
+    },
+    "brand": "BROWTH",
+    "format": "powder",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "flavors": [
+      "chocolate"
+    ],
+    "serving": "porção de 30 g",
     "allergens": {
       "contains": [
         "milk",
@@ -53,9 +89,11 @@
       ],
       "may_contain": []
     },
-    "restrictions": [
-      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
-    ],
+    "free_from": {
+      "milk": false,
+      "gluten": true,
+      "lactose": false
+    },
     "nutrition": [
       {
         "name": "Valor energético",
@@ -74,23 +112,43 @@
         "amount": "2 g"
       }
     ],
-    "serving": "porção de 30 g",
-    "diet": {
-      "vegetarian": true,
-      "vegan": false
-    },
-    "free_from": {
-      "milk": false,
-      "lactose": false,
-      "gluten": true
-    },
+    "back_image": "/assets/backs/whey750.svg",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
     "stimulants": [],
+    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+    "flavor_names": [
+      "Chocolate"
+    ],
+    "rating_count": 0,
+    "restrictions": [
+      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
     "demo_complete": true,
-    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/whey750.svg"
+    "contains_caffeine": false,
+    "family": "whey-protein",
+    "weight_grams": 750,
+    "size": "750 g",
+    "variant": "750 g / Chocolate"
   },
   "whey1kg": {
-    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+    "diet": {
+      "vegan": false,
+      "vegetarian": true
+    },
+    "brand": "BROWTH",
+    "format": "powder",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "flavors": [
+      "chocolate"
+    ],
+    "serving": "porção de 30 g",
     "allergens": {
       "contains": [
         "milk",
@@ -98,9 +156,11 @@
       ],
       "may_contain": []
     },
-    "restrictions": [
-      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
-    ],
+    "free_from": {
+      "milk": false,
+      "gluten": true,
+      "lactose": false
+    },
     "nutrition": [
       {
         "name": "Valor energético",
@@ -119,23 +179,43 @@
         "amount": "2 g"
       }
     ],
-    "serving": "porção de 30 g",
-    "diet": {
-      "vegetarian": true,
-      "vegan": false
-    },
-    "free_from": {
-      "milk": false,
-      "lactose": false,
-      "gluten": true
-    },
+    "back_image": "/assets/backs/whey1kg.svg",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
     "stimulants": [],
+    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+    "flavor_names": [
+      "Chocolate"
+    ],
+    "rating_count": 0,
+    "restrictions": [
+      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
     "demo_complete": true,
-    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/whey1kg.svg"
+    "contains_caffeine": false,
+    "family": "whey-protein",
+    "weight_grams": 1000,
+    "size": "1 kg",
+    "variant": "1 kg / Chocolate"
   },
   "whey3kg": {
-    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+    "diet": {
+      "vegan": false,
+      "vegetarian": true
+    },
+    "brand": "BROWTH",
+    "format": "powder",
+    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "flavors": [
+      "chocolate"
+    ],
+    "serving": "porção de 30 g",
     "allergens": {
       "contains": [
         "milk",
@@ -143,9 +223,11 @@
       ],
       "may_contain": []
     },
-    "restrictions": [
-      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
-    ],
+    "free_from": {
+      "milk": false,
+      "gluten": true,
+      "lactose": false
+    },
     "nutrition": [
       {
         "name": "Valor energético",
@@ -164,20 +246,26 @@
         "amount": "2 g"
       }
     ],
-    "serving": "porção de 30 g",
-    "diet": {
-      "vegetarian": true,
-      "vegan": false
-    },
-    "free_from": {
-      "milk": false,
-      "lactose": false,
-      "gluten": true
-    },
+    "back_image": "/assets/backs/whey3kg.svg",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
     "stimulants": [],
+    "composition": "Proteína concentrada do soro de leite, emulsificante lecitina de soja.",
+    "flavor_names": [
+      "Chocolate"
+    ],
+    "rating_count": 0,
+    "restrictions": [
+      "Contém leite e soja. Não é indicado a pessoas alérgicas a esses ingredientes."
+    ],
     "demo_complete": true,
-    "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/whey3kg.svg"
+    "contains_caffeine": false,
+    "family": "whey-protein",
+    "weight_grams": 3000,
+    "size": "3 kg",
+    "variant": "3 kg / Chocolate"
   },
   "creatina300": {
     "composition": "Creatina monohidratada.",
@@ -904,5 +992,293 @@
     "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
     "demo_complete": false,
     "rating_count": 0
+  },
+  "whey300-baunilha": {
+    "brand": "BROWTH",
+    "format": "powder",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "family": "whey-protein",
+    "weight_grams": 300,
+    "size": "300 g",
+    "flavors": [
+      "vanilla"
+    ],
+    "flavor_names": [
+      "Baunilha"
+    ],
+    "variant": "300 g / Baunilha",
+    "diet": {
+      "vegan": false
+    },
+    "allergens": {
+      "contains": [
+        "milk"
+      ]
+    },
+    "free_from": {
+      "milk": false
+    },
+    "demo_complete": false,
+    "rating_count": 0,
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+  },
+  "whey300-morango": {
+    "brand": "BROWTH",
+    "format": "powder",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "family": "whey-protein",
+    "weight_grams": 300,
+    "size": "300 g",
+    "flavors": [
+      "strawberry"
+    ],
+    "flavor_names": [
+      "Morango"
+    ],
+    "variant": "300 g / Morango",
+    "diet": {
+      "vegan": false
+    },
+    "allergens": {
+      "contains": [
+        "milk"
+      ]
+    },
+    "free_from": {
+      "milk": false
+    },
+    "demo_complete": false,
+    "rating_count": 0,
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+  },
+  "whey750-baunilha": {
+    "brand": "BROWTH",
+    "format": "powder",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "family": "whey-protein",
+    "weight_grams": 750,
+    "size": "750 g",
+    "flavors": [
+      "vanilla"
+    ],
+    "flavor_names": [
+      "Baunilha"
+    ],
+    "variant": "750 g / Baunilha",
+    "diet": {
+      "vegan": false
+    },
+    "allergens": {
+      "contains": [
+        "milk"
+      ]
+    },
+    "free_from": {
+      "milk": false
+    },
+    "demo_complete": false,
+    "rating_count": 0,
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+  },
+  "whey750-morango": {
+    "brand": "BROWTH",
+    "format": "powder",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "family": "whey-protein",
+    "weight_grams": 750,
+    "size": "750 g",
+    "flavors": [
+      "strawberry"
+    ],
+    "flavor_names": [
+      "Morango"
+    ],
+    "variant": "750 g / Morango",
+    "diet": {
+      "vegan": false
+    },
+    "allergens": {
+      "contains": [
+        "milk"
+      ]
+    },
+    "free_from": {
+      "milk": false
+    },
+    "demo_complete": false,
+    "rating_count": 0,
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+  },
+  "whey1kg-baunilha": {
+    "brand": "BROWTH",
+    "format": "powder",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "family": "whey-protein",
+    "weight_grams": 1000,
+    "size": "1 kg",
+    "flavors": [
+      "vanilla"
+    ],
+    "flavor_names": [
+      "Baunilha"
+    ],
+    "variant": "1 kg / Baunilha",
+    "diet": {
+      "vegan": false
+    },
+    "allergens": {
+      "contains": [
+        "milk"
+      ]
+    },
+    "free_from": {
+      "milk": false
+    },
+    "demo_complete": false,
+    "rating_count": 0,
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+  },
+  "whey1kg-morango": {
+    "brand": "BROWTH",
+    "format": "powder",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "family": "whey-protein",
+    "weight_grams": 1000,
+    "size": "1 kg",
+    "flavors": [
+      "strawberry"
+    ],
+    "flavor_names": [
+      "Morango"
+    ],
+    "variant": "1 kg / Morango",
+    "diet": {
+      "vegan": false
+    },
+    "allergens": {
+      "contains": [
+        "milk"
+      ]
+    },
+    "free_from": {
+      "milk": false
+    },
+    "demo_complete": false,
+    "rating_count": 0,
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+  },
+  "whey3kg-baunilha": {
+    "brand": "BROWTH",
+    "format": "powder",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "family": "whey-protein",
+    "weight_grams": 3000,
+    "size": "3 kg",
+    "flavors": [
+      "vanilla"
+    ],
+    "flavor_names": [
+      "Baunilha"
+    ],
+    "variant": "3 kg / Baunilha",
+    "diet": {
+      "vegan": false
+    },
+    "allergens": {
+      "contains": [
+        "milk"
+      ]
+    },
+    "free_from": {
+      "milk": false
+    },
+    "demo_complete": false,
+    "rating_count": 0,
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+  },
+  "whey3kg-morango": {
+    "brand": "BROWTH",
+    "format": "powder",
+    "objectives": [
+      "protein",
+      "recovery"
+    ],
+    "sports": [
+      "strength",
+      "cross"
+    ],
+    "family": "whey-protein",
+    "weight_grams": 3000,
+    "size": "3 kg",
+    "flavors": [
+      "strawberry"
+    ],
+    "flavor_names": [
+      "Morango"
+    ],
+    "variant": "3 kg / Morango",
+    "diet": {
+      "vegan": false
+    },
+    "allergens": {
+      "contains": [
+        "milk"
+      ]
+    },
+    "free_from": {
+      "milk": false
+    },
+    "demo_complete": false,
+    "rating_count": 0,
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
   }
 }
