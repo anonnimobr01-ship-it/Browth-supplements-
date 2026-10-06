@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "rm -rf dist && mkdir dist && cp -R public/. dist/ && rm -f dist/api.php dist/.htaccess",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://SEU-BACKEND.onrender.com/api/:path*"
+    }
+  ]
+}
