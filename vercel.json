@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://SEU-BACKEND.onrender.com/api/:path*"
+      "destination": "https://browth-supplements.onrender.com/api/:path*"
     }
   ]
 }
