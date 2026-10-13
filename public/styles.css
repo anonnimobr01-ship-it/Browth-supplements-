@@ -20,3 +20,20 @@
 /* Updated BROWTH identity and expanded catalog */
 .brand img{display:block;width:220px;height:auto;max-width:100%;object-fit:contain}.header-inner .brand{flex-shrink:0}.footer-main .brand img{width:200px}nav{justify-content:flex-start;overflow-x:auto;white-space:nowrap;scrollbar-width:thin}nav a{flex-shrink:0}.hero-art img{max-width:100%}.category-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media(max-width:700px){.brand img{width:160px}.header-inner{gap:15px}.category-grid{display:flex}.hero-art img{width:100%;height:100%}}
+
+
+/* Aviso de consentimento — identidade BROWTH */
+.cookie-consent{position:fixed;bottom:20px;left:20px;right:20px;z-index:9999;max-width:940px;margin:auto;background:linear-gradient(125deg,#24131b 0%,#130f12 75%);border:1px solid #744153;border-radius:18px;box-shadow:0 20px 65px #000b;color:#fff;padding:24px 27px}
+.cookie-consent-content{display:flex;justify-content:space-between;align-items:end;gap:30px}
+.cookie-consent-content>div:first-child{max-width:610px}
+.cookie-consent-tag{font-size:10px;font-weight:700;letter-spacing:2px;color:#ff9eaf}
+.cookie-consent h2{font-size:23px;line-height:1.2;margin:9px 0 12px}
+.cookie-consent p{font-size:13px;line-height:1.65;margin:0 0 10px;color:#e4d5dc}
+.cookie-consent a{color:#ff9eaf;font-size:12px;text-underline-offset:4px}
+.cookie-consent-actions{display:flex;flex-direction:column;gap:10px;min-width:205px}
+.cookie-consent-actions button{width:100%;font-size:12px;white-space:normal;min-height:43px;cursor:pointer}
+.cookie-consent-actions button:focus-visible,.footer-cookie-settings:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.footer-cookie-settings{background:none;border:0;color:inherit;padding:0;text-align:left;font:inherit;font-size:inherit;cursor:pointer}
+.footer-cookie-settings:hover{text-decoration:underline}
+@media(max-width:700px){.cookie-consent{bottom:12px;left:12px;right:12px;padding:20px 18px;border-radius:14px;max-height:calc(100vh - 24px);overflow:auto}.cookie-consent-content{display:block}.cookie-consent h2{font-size:21px}.cookie-consent-actions{margin-top:17px;display:grid;grid-template-columns:1fr 1fr;min-width:0;gap:8px}.cookie-consent-actions button{font-size:11px;padding:10px 8px}}
+@media(max-width:360px){.cookie-consent-actions{grid-template-columns:1fr}}
