@@ -7,6 +7,7 @@ export function enableProductZoom(main) {
   const current = { scale: 1, x: 0, y: 0 };
   const target = { scale: 1, x: 0, y: 0 };
   let overlay, stage, picture, caption, errorMessage;
+  let galleryImages = [], sourceGallery = null, activeIndex = 0;
   let frame = 0, previousFocus = null, previousOverflow = '';
   let lastTap = null, moved = false, lastTouchZoomAt = 0;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -67,6 +68,35 @@ export function enableProductZoom(main) {
     redraw();
   }
 
+  function switchPhoto(direction) {
+    if (galleryImages.length < 2) return;
+    const next = (activeIndex + direction + galleryImages.length) % galleryImages.length;
+    showPhoto(next, true);
+  }
+
+  function showPhoto(index, syncGallery = false) {
+    const selected = galleryImages[index];
+    if (!selected) return;
+    activeIndex = index;
+    // Cada lado abre centralizado, evitando herdar um recorte ampliado do outro.
+    Object.assign(current, { scale: 1, x: 0, y: 0 });
+    Object.assign(target, current);
+    if (frame) { cancelAnimationFrame(frame); frame = 0; }
+    picture.style.transform = '';
+    stage.classList.remove('pz-zoomed');
+    errorMessage.hidden = true;
+    picture.hidden = false;
+    picture.alt = selected.alt || 'Foto do produto';
+    caption.textContent = picture.alt;
+    const url = selected.currentSrc || selected.src;
+    picture.src = url;
+    // Mantém a mini-galeria da página em sincronia com a janela ampliada.
+    if (syncGallery && sourceGallery?.isConnected) {
+      sourceGallery.querySelector('[data-gallery="' + index + '"]')?.click();
+    }
+    redraw();
+  }
+
   function createOverlay() {
     if (overlay) return;
     overlay = document.createElement('div');
@@ -79,6 +109,8 @@ export function enableProductZoom(main) {
       '<div class="pz-topbar"><div class="pz-heading"><span>BROWTH SUPPLEMENTS</span>',
       '<h2 id="pz-title">Visualização ampliada</h2><p class="pz-caption"></p></div>',
       '<button type="button" class="pz-close" data-pz="close" aria-label="Fechar imagem">✕</button></div>',
+      '<button type="button" class="pz-nav pz-prev" data-pz="prev" aria-label="Ver foto anterior">‹</button>',
+      '<button type="button" class="pz-nav pz-next" data-pz="next" aria-label="Ver próxima foto">›</button>',
       '<button type="button" class="pz-restore" data-pz="restore">Restaure</button>',
       '<p class="pz-sr-only" id="pz-help">Use a roda do mouse ou dois dedos para dar zoom, arraste para mover e pressione Escape para fechar.</p>',
       '</section>'
@@ -100,6 +132,8 @@ export function enableProductZoom(main) {
       const action = event.target.closest('[data-pz]')?.dataset.pz;
       if (action === 'close') close();
       else if (action === 'restore') restore();
+      else if (action === 'prev') switchPhoto(-1);
+      else if (action === 'next') switchPhoto(1);
       else if (event.target === overlay) close();
     });
 
@@ -161,7 +195,19 @@ export function enableProductZoom(main) {
     function endPointer(event) {
       if (!pointers.has(event.pointerId)) return;
       const wasSingle = pointers.size === 1;
+      const firstPoint = pointers.get(event.pointerId);
       pointers.delete(event.pointerId);
+      // Deslize horizontal alterna frente/verso apenas sem zoom.
+      if (event.type === 'pointerup' && wasSingle && event.pointerType === 'touch'
+        && target.scale <= 1.02 && galleryImages.length > 1 && firstPoint) {
+        const dx = event.clientX - firstPoint.startX;
+        const dy = event.clientY - firstPoint.startY;
+        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.3) {
+          switchPhoto(dx < 0 ? 1 : -1);
+          lastTap = null;
+          return;
+        }
+      }
       if (event.type === 'pointerup' && wasSingle && event.pointerType === 'touch' && !moved) {
         const now = performance.now();
         if (lastTap && now - lastTap.time < 320
@@ -182,26 +228,20 @@ export function enableProductZoom(main) {
 
   function open(gallery) {
     if (!gallery) return;
-    const images = gallery.querySelectorAll('.gallery-track img');
+    const images = [...gallery.querySelectorAll('.gallery-track img')];
     const index = Number(gallery.dataset.index || 0);
-    const selected = images[index] || images[0];
-    if (!selected) return;
+    if (!images.length) return;
     createOverlay();
     previousFocus = document.activeElement;
     previousOverflow = document.body.style.overflow;
-    picture.hidden = false;
-    errorMessage.hidden = true;
-    Object.assign(current, { scale: 1, x: 0, y: 0 });
-    Object.assign(target, current);
-    picture.style.transform = '';
+    galleryImages = images;
+    sourceGallery = gallery;
     pointers.clear();
     lastTap = null;
-    picture.alt = selected.alt || 'Foto do produto';
-    caption.textContent = picture.alt;
     overlay.hidden = false;
     document.body.style.overflow = 'hidden';
-    picture.src = selected.currentSrc || selected.src;
-    redraw();
+    overlay.querySelectorAll('.pz-nav').forEach(button => { button.hidden = images.length < 2; });
+    showPhoto(Number.isInteger(index) && index >= 0 && index < images.length ? index : 0);
     overlay.querySelector('[data-pz="close"]').focus();
   }
 
@@ -210,6 +250,8 @@ export function enableProductZoom(main) {
     overlay.hidden = true;
     if (frame) { cancelAnimationFrame(frame); frame = 0; }
     picture.removeAttribute('src');
+    galleryImages = [];
+    sourceGallery = null;
     document.body.style.overflow = previousOverflow;
     pointers.clear();
     lastTap = null;
@@ -229,11 +271,13 @@ export function enableProductZoom(main) {
   document.addEventListener('keydown', event => {
     if (!overlay || overlay.hidden) return;
     if (event.key === 'Escape') { event.preventDefault(); close(); }
+    else if (event.key === 'ArrowLeft' && galleryImages.length > 1) { event.preventDefault(); switchPhoto(-1); }
+    else if (event.key === 'ArrowRight' && galleryImages.length > 1) { event.preventDefault(); switchPhoto(1); }
     else if (event.key === '+' || event.key === '=') { event.preventDefault(); zoomCenter(1.35); }
     else if (event.key === '-') { event.preventDefault(); zoomCenter(1 / 1.35); }
     else if (event.key === '0') { event.preventDefault(); restore(); }
     else if (event.key === 'Tab') {
-      const controls = [...overlay.querySelectorAll('button:not(:disabled)')];
+      const controls = [...overlay.querySelectorAll('button:not(:disabled):not([hidden])')];
       if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); controls[controls.length - 1].focus(); }
       else if (!event.shiftKey && document.activeElement === controls[controls.length - 1]) { event.preventDefault(); controls[0].focus(); }
     }
