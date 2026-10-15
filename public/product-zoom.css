@@ -1,80 +1,84 @@
-/* Visualização ampliada: preto, vinho e vermelho BROWTH. */
+/* BROWTH — zoom de fotos: sem barra inferior, movimento e pinça suaves. */
 .gallery-zoom-open{
   position:absolute;left:14px;bottom:14px;z-index:3;
-  border:1px solid #ffffff55;border-radius:22px;
-  background:#160e12de;color:#fff;padding:9px 13px;
+  border:1px solid #ffffff46;border-radius:24px;
+  background:#170d12cf;color:#fff;padding:9px 13px;
   font-size:12px;font-weight:700;letter-spacing:.2px;
-  box-shadow:0 4px 22px #0009;backdrop-filter:blur(8px)
+  box-shadow:0 4px 20px #0008;backdrop-filter:blur(10px)
 }
 .gallery-zoom-open:hover{background:#741e30}
 .pz-overlay{
-  position:fixed;inset:0;z-index:10050;padding:16px;
-  background:#050507eF;backdrop-filter:blur(14px);color:#fff
+  position:fixed;inset:0;z-index:10050;padding:12px;
+  background:#030304f2;backdrop-filter:blur(14px);color:#fff
 }
 .pz-overlay[hidden]{display:none!important}
 .pz-dialog{
-  display:flex;flex-direction:column;width:min(1160px,100%);height:100%;
-  margin:auto;overflow:hidden;background:#0c0b0e;
-  border:1px solid #713341;border-radius:17px;
-  box-shadow:0 20px 90px #000d
+  position:relative;width:min(1200px,100%);height:100%;
+  margin:auto;overflow:hidden;border:1px solid #ffffff1b;
+  border-radius:17px;background:#0a080b;
+  box-shadow:0 15px 90px #000e
 }
-.pz-header{
-  display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
-  padding:18px 22px;border-bottom:1px solid #ffffff20;
-  background:linear-gradient(110deg,#251016,#111013)
-}
-.pz-eyebrow{color:#f58999;font-size:10px;letter-spacing:2px;font-weight:bold}
-.pz-header h2{margin:2px 0 3px;font-size:22px;letter-spacing:-.5px}
-.pz-caption{margin:0;color:#beb5b9;font-size:12px}
-.pz-close{
-  flex-shrink:0;display:grid;place-items:center;padding:0;
-  width:44px;height:44px;border:1px solid #ffffff33;
-  background:#2b171e;color:#fff;border-radius:50%;font-size:20px
-}
-.pz-close:hover{background:#812036}
 .pz-stage{
-  position:relative;display:flex;flex:1;min-height:0;
-  justify-content:center;align-items:center;overflow:hidden;
-  background:radial-gradient(ellipse at 50% 45%,#302026 0%,#080709 64%);
-  cursor:zoom-in;touch-action:none
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;touch-action:none;cursor:zoom-in;
+  background:radial-gradient(ellipse at center,#26161e 0%,#0c090d 55%,#050507 100%)
 }
-.pz-stage.pz-pannable{cursor:grab}
-.pz-stage.pz-pannable:active{cursor:grabbing}
+.pz-stage.pz-zoomed{cursor:grab}
+.pz-stage.pz-zoomed:active{cursor:grabbing}
 .pz-stage img{
   display:block;width:auto;height:auto;max-width:100%;max-height:100%;
-  object-fit:contain;user-select:none;-webkit-user-select:none;
-  -webkit-user-drag:none;pointer-events:none;transform-origin:center center;
-  will-change:transform
+  object-fit:contain;pointer-events:none;user-select:none;
+  -webkit-user-select:none;-webkit-user-drag:none;
+  transform-origin:center center;will-change:transform
 }
-.pz-error{padding:20px;text-align:center;color:#f6bec7}
-.pz-footer{
-  display:flex;flex-direction:column;align-items:center;gap:6px;padding:11px 18px;
-  background:#151015;border-top:1px solid #ffffff20
+.pz-error{padding:22px;text-align:center;color:#f9c0c9}
+.pz-topbar{
+  position:absolute;z-index:2;top:0;left:0;right:0;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:20px;
+  padding:22px 24px 40px;
+  background:linear-gradient(180deg,#080608e8 0%,#080608a6 50%,transparent 100%);
+  pointer-events:none
 }
-.pz-tools{display:flex;align-items:center;justify-content:center;gap:10px}
-.pz-tools button{
-  min-width:42px;height:42px;padding:7px 11px;background:#29171f;
-  border:1px solid #ffffff2d;border-radius:9px;color:#fff;font-size:22px
+.pz-heading{max-width:calc(100% - 70px)}
+.pz-heading>span{
+  color:#e67b8d;font-size:10px;letter-spacing:2px;font-weight:700
 }
-.pz-tools button:hover{background:#762238}
-.pz-tools button.pz-reset{font-size:12px;min-width:87px}
-.pz-tools input[type="range"]{
-  padding:0;width:min(190px,28vw);height:28px;accent-color:#ed4358;
-  background:transparent;border:0;cursor:pointer
+.pz-heading h2{
+  font-size:clamp(16px,2.5vw,22px);line-height:1.2;
+  letter-spacing:-.4px;margin:4px 0 5px
 }
-.pz-amount{font-size:12px;font-weight:700;min-width:45px;text-align:center;font-variant-numeric:tabular-nums}
-.pz-footer p{margin:0;color:#b3a8ae;font-size:11px;text-align:center}
+.pz-caption{margin:0;font-size:12px;color:#c5bbc1}
+.pz-close{
+  flex:0 0 auto;pointer-events:auto;display:grid;place-items:center;
+  width:44px;height:44px;padding:0;border-radius:50%;
+  background:#24181fcf;border:1px solid #ffffff33;
+  color:#fff;font-size:19px;backdrop-filter:blur(8px)
+}
+.pz-close:hover{background:#682033;transform:none}
+.pz-restore{
+  position:absolute;right:24px;bottom:24px;z-index:3;
+  padding:9px 16px;border:1px solid #ffffff39;border-radius:999px;
+  background:#1a1319c9;color:#f5e8eb;font-size:12px;
+  font-weight:600;letter-spacing:.2px;box-shadow:0 5px 20px #0006;
+  backdrop-filter:blur(10px)
+}
+.pz-restore:hover{background:#532031;transform:none}
+.pz-close:focus-visible,.pz-restore:focus-visible{
+  outline:2px solid #ff6c83;outline-offset:3px
+}
+.pz-sr-only{
+  position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap
+}
 @media(max-width:700px){
   .pz-overlay{padding:0}
   .pz-dialog{border:0;border-radius:0}
-  .pz-header{padding:14px 16px}
-  .pz-header h2{font-size:18px}
+  .pz-topbar{padding:19px 17px 42px}
+  .pz-caption{font-size:11px}
   .pz-close{width:42px;height:42px}
-  .pz-footer{padding:13px 8px max(17px,env(safe-area-inset-bottom))}
-  .pz-tools{gap:7px}
-  .pz-tools button{min-width:38px;height:40px;padding:4px 8px}
-  .pz-tools button.pz-reset{min-width:70px;font-size:11px}
-  .pz-tools input[type="range"]{width:min(118px,27vw)}
-  .gallery-zoom-open{left:10px;bottom:10px;padding:8px 10px;font-size:11px}
+  .pz-restore{right:16px;bottom:max(20px,env(safe-area-inset-bottom));padding:10px 15px}
+  .gallery-zoom-open{left:10px;bottom:10px;padding:8px 11px;font-size:11px}
 }
-@media(prefers-reduced-motion:reduce){.pz-stage img{transition:none!important}}
+@media(prefers-reduced-motion:reduce){
+  .pz-stage img{transition:none!important}
+}
