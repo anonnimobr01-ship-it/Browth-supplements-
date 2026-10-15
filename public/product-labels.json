@@ -45,7 +45,7 @@
         "amount": "2 g"
       }
     ],
-    "back_image": "/assets/backs/whey300.svg",
+    "back_image": "/assets/backs/whey300.webp",
     "objectives": [
       "protein",
       "recovery"
@@ -112,7 +112,7 @@
         "amount": "2 g"
       }
     ],
-    "back_image": "/assets/backs/whey750.svg",
+    "back_image": "/assets/backs/whey750.webp",
     "objectives": [
       "protein",
       "recovery"
@@ -179,7 +179,7 @@
         "amount": "2 g"
       }
     ],
-    "back_image": "/assets/backs/whey1kg.svg",
+    "back_image": "/assets/backs/whey1kg.webp",
     "objectives": [
       "protein",
       "recovery"
@@ -246,7 +246,7 @@
         "amount": "2 g"
       }
     ],
-    "back_image": "/assets/backs/whey3kg.svg",
+    "back_image": "/assets/backs/whey3kg.webp",
     "objectives": [
       "protein",
       "recovery"
@@ -295,7 +295,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/creatina300.svg"
+    "back_image": "/assets/backs/creatina300.webp"
   },
   "creatina600": {
     "composition": "Creatina monohidratada.",
@@ -325,7 +325,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/creatina600.svg"
+    "back_image": "/assets/backs/creatina600.webp"
   },
   "creatina1kg": {
     "composition": "Creatina monohidratada.",
@@ -355,7 +355,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/creatina1kg.svg"
+    "back_image": "/assets/backs/creatina1kg.webp"
   },
   "creatina2kg": {
     "composition": "Creatina monohidratada.",
@@ -385,7 +385,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/creatina2kg.svg"
+    "back_image": "/assets/backs/creatina2kg.webp"
   },
   "pre300": {
     "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
@@ -427,7 +427,7 @@
     ],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/pre300.svg"
+    "back_image": "/assets/backs/pre300.webp"
   },
   "pre600": {
     "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
@@ -469,7 +469,7 @@
     ],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/pre600.svg"
+    "back_image": "/assets/backs/pre600.webp"
   },
   "pre1kg": {
     "composition": "Maltodextrina, cafeína anidra, acidulante ácido cítrico, aroma artificial e edulcorante sucralose.",
@@ -511,7 +511,7 @@
     ],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/pre1kg.svg"
+    "back_image": "/assets/backs/pre1kg.webp"
   },
   "hiper1kg": {
     "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
@@ -558,7 +558,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/hiper1kg.svg"
+    "back_image": "/assets/backs/hiper1kg.webp"
   },
   "hiper2kg": {
     "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
@@ -605,7 +605,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/hiper2kg.svg"
+    "back_image": "/assets/backs/hiper2kg.webp"
   },
   "hiper3kg": {
     "composition": "Maltodextrina, proteína concentrada do soro de leite, cacau em pó e emulsificante lecitina de soja.",
@@ -652,7 +652,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/hiper3kg.svg"
+    "back_image": "/assets/backs/hiper3kg.webp"
   },
   "vitaminaMorango": {
     "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de morango.",
@@ -690,7 +690,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/vitaminaMorango.svg"
+    "back_image": "/assets/backs/vitaminaMorango.webp"
   },
   "vitaminaLaranja": {
     "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de laranja.",
@@ -728,7 +728,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/vitaminaLaranja.svg"
+    "back_image": "/assets/backs/vitaminaLaranja.webp"
   },
   "vitaminaLimao": {
     "composition": "Maltodextrina, vitamina C (ácido ascórbico), vitamina B6 (cloridrato de piridoxina), vitamina B12 (cianocobalamina), acidulante ácido cítrico e aroma artificial de limão.",
@@ -766,7 +766,7 @@
     "stimulants": [],
     "demo_complete": true,
     "source": "Dados de referência do catálogo BROWTH SUPPLEMENTS",
-    "back_image": "/assets/backs/vitaminaLimao.svg"
+    "back_image": "/assets/backs/vitaminaLimao.webp"
   },
   "plant-chocolate600": {
     "brand": "BROWTH",
@@ -792,7 +792,8 @@
     "diet": {
       "vegan": true,
       "vegetarian": true
-    }
+    },
+    "back_image": "/assets/backs/plant-chocolate600.webp"
   },
   "plant-baunilha600": {
     "brand": "BROWTH",
@@ -818,7 +819,8 @@
     "diet": {
       "vegan": true,
       "vegetarian": true
-    }
+    },
+    "back_image": "/assets/backs/plant-baunilha600.webp"
   },
   "barra-chocolate60": {
     "brand": "BROWTH",
@@ -840,7 +842,8 @@
     "launched_at": "2026-09-30T19:13:19Z",
     "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
     "demo_complete": false,
-    "rating_count": 0
+    "rating_count": 0,
+    "back_image": "/assets/backs/barra-chocolate60.webp"
   },
   "barra-vegan-frutas50": {
     "brand": "BROWTH",
@@ -866,7 +869,8 @@
     "diet": {
       "vegan": true,
       "vegetarian": true
-    }
+    },
+    "back_image": "/assets/backs/barra-vegan-frutas50.webp"
   },
   "shake-chocolate250": {
     "brand": "BROWTH",
@@ -1027,7 +1031,8 @@
     },
     "demo_complete": false,
     "rating_count": 0,
-    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada.",
+    "back_image": "/assets/backs/whey300-baunilha.webp"
   },
   "whey300-morango": {
     "brand": "BROWTH",
@@ -1063,7 +1068,8 @@
     },
     "demo_complete": false,
     "rating_count": 0,
-    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada.",
+    "back_image": "/assets/backs/whey300-morango.webp"
   },
   "whey750-baunilha": {
     "brand": "BROWTH",
@@ -1099,7 +1105,8 @@
     },
     "demo_complete": false,
     "rating_count": 0,
-    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada.",
+    "back_image": "/assets/backs/whey750-baunilha.webp"
   },
   "whey750-morango": {
     "brand": "BROWTH",
@@ -1135,7 +1142,8 @@
     },
     "demo_complete": false,
     "rating_count": 0,
-    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada.",
+    "back_image": "/assets/backs/whey750-morango.webp"
   },
   "whey1kg-baunilha": {
     "brand": "BROWTH",
@@ -1171,7 +1179,8 @@
     },
     "demo_complete": false,
     "rating_count": 0,
-    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada.",
+    "back_image": "/assets/backs/whey1kg-baunilha.webp"
   },
   "whey1kg-morango": {
     "brand": "BROWTH",
@@ -1207,7 +1216,8 @@
     },
     "demo_complete": false,
     "rating_count": 0,
-    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada.",
+    "back_image": "/assets/backs/whey1kg-morango.webp"
   },
   "whey3kg-baunilha": {
     "brand": "BROWTH",
@@ -1243,7 +1253,8 @@
     },
     "demo_complete": false,
     "rating_count": 0,
-    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada.",
+    "back_image": "/assets/backs/whey3kg-baunilha.webp"
   },
   "whey3kg-morango": {
     "brand": "BROWTH",
@@ -1279,6 +1290,7 @@
     },
     "demo_complete": false,
     "rating_count": 0,
-    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada."
+    "source": "Variação visual do catálogo BROWTH; composição completa não cadastrada.",
+    "back_image": "/assets/backs/whey3kg-morango.webp"
   }
 }
