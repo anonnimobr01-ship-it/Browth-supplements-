@@ -1,7 +1,7 @@
--- Versos publicados e verificados no GitHub em 2026-10-15: 29 WebP.
--- Para os seis produtos ainda sem imagem WebP, manter o valor atual do campo back_image.
--- Esta migração modifica apenas o atributo back_image; demais atributos são preservados.
+-- Sincronização idempotente dos 35 versos publicados no repositório (2026-10-15).
+-- Preserva os demais campos de catalog_attributes e requer que os WebP existam em public/assets/backs/.
 BEGIN;
+UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/aveia-proteica1kg.webp'::text), true) WHERE id = 'aveia-proteica1kg';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/barra-chocolate60.webp'::text), true) WHERE id = 'barra-chocolate60';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/barra-vegan-frutas50.webp'::text), true) WHERE id = 'barra-vegan-frutas50';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/creatina1kg.webp'::text), true) WHERE id = 'creatina1kg';
@@ -11,11 +11,16 @@ UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attri
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/hiper1kg.webp'::text), true) WHERE id = 'hiper1kg';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/hiper2kg.webp'::text), true) WHERE id = 'hiper2kg';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/hiper3kg.webp'::text), true) WHERE id = 'hiper3kg';
+UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/multi-capsulas60.webp'::text), true) WHERE id = 'multi-capsulas60';
+UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/multi-comprimidos60.webp'::text), true) WHERE id = 'multi-comprimidos60';
+UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/pasta-amendoim500.webp'::text), true) WHERE id = 'pasta-amendoim500';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/plant-baunilha600.webp'::text), true) WHERE id = 'plant-baunilha600';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/plant-chocolate600.webp'::text), true) WHERE id = 'plant-chocolate600';
+UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/plant-shake-baunilha250.webp'::text), true) WHERE id = 'plant-shake-baunilha250';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/pre1kg.webp'::text), true) WHERE id = 'pre1kg';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/pre300.webp'::text), true) WHERE id = 'pre300';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/pre600.webp'::text), true) WHERE id = 'pre600';
+UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/shake-chocolate250.webp'::text), true) WHERE id = 'shake-chocolate250';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/vitaminaLaranja.webp'::text), true) WHERE id = 'vitaminaLaranja';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/vitaminaLimao.webp'::text), true) WHERE id = 'vitaminaLimao';
 UPDATE public.products SET catalog_attributes = jsonb_set(coalesce(catalog_attributes, '{}'::jsonb), '{back_image}', to_jsonb('/assets/backs/vitaminaMorango.webp'::text), true) WHERE id = 'vitaminaMorango';
