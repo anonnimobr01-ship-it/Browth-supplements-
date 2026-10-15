@@ -79,6 +79,28 @@
   .pz-restore{right:16px;bottom:max(20px,env(safe-area-inset-bottom));padding:10px 15px}
   .gallery-zoom-open{left:10px;bottom:10px;padding:8px 11px;font-size:11px}
 }
+
+/* Troca de frente/verso na própria imagem ampliada, sem barra de controles. */
+.pz-nav{
+  position:absolute;z-index:3;top:50%;
+  display:grid;place-items:center;width:46px;height:54px;padding:0;
+  transform:translateY(-50%);border:1px solid #ffffff26;
+  border-radius:13px;background:#110e13a8;
+  color:#fff;font-size:35px;font-weight:300;line-height:1;
+  opacity:.78;backdrop-filter:blur(12px);
+  box-shadow:0 5px 22px #0006;transition:background .18s,opacity .18s
+}
+.pz-prev{left:18px}
+.pz-next{right:18px}
+.pz-nav:hover{background:#631c2ef0;opacity:1;transform:translateY(-50%)}
+.pz-nav:focus-visible{opacity:1;outline:2px solid #ff6c83;outline-offset:3px}
+.pz-nav[hidden]{display:none!important}
+@media(max-width:700px){
+  .pz-nav{width:39px;height:49px;font-size:30px;opacity:.64}
+  .pz-prev{left:7px}
+  .pz-next{right:7px}
+}
+
 @media(prefers-reduced-motion:reduce){
   .pz-stage img{transition:none!important}
 }
