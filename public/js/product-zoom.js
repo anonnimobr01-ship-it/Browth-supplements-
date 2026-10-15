@@ -8,7 +8,7 @@ export function enableProductZoom(main) {
   const target = { scale: 1, x: 0, y: 0 };
   let overlay, stage, picture, caption, errorMessage;
   let frame = 0, previousFocus = null, previousOverflow = '';
-  let lastTap = null, moved = false;
+  let lastTap = null, moved = false, lastTouchZoomAt = 0;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function limit(view) {
@@ -112,6 +112,8 @@ export function enableProductZoom(main) {
 
     stage.addEventListener('dblclick', event => {
       event.preventDefault();
+      // Alguns celulares também emitem dblclick depois do toque duplo.
+      if (performance.now() - lastTouchZoomAt < 450) return;
       if (target.scale > 1.2) restore();
       else zoomAt(2.6, event.clientX, event.clientY);
     });
@@ -164,6 +166,7 @@ export function enableProductZoom(main) {
         const now = performance.now();
         if (lastTap && now - lastTap.time < 320
           && Math.hypot(event.clientX - lastTap.x, event.clientY - lastTap.y) < 35) {
+          lastTouchZoomAt = now;
           if (target.scale > 1.2) restore();
           else zoomAt(2.6, event.clientX, event.clientY);
           lastTap = null;
