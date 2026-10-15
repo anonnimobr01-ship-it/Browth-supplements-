@@ -892,7 +892,8 @@
     "launched_at": "2026-09-30T19:13:19Z",
     "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
     "demo_complete": false,
-    "rating_count": 0
+    "rating_count": 0,
+    "back_image": "/assets/backs/shake-chocolate250.webp"
   },
   "plant-shake-baunilha250": {
     "brand": "BROWTH",
@@ -918,7 +919,8 @@
     "diet": {
       "vegan": true,
       "vegetarian": true
-    }
+    },
+    "back_image": "/assets/backs/plant-shake-baunilha250.webp"
   },
   "pasta-amendoim500": {
     "brand": "BROWTH",
@@ -939,7 +941,8 @@
     "launched_at": "2026-09-30T19:13:19Z",
     "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
     "demo_complete": false,
-    "rating_count": 0
+    "rating_count": 0,
+    "back_image": "/assets/backs/pasta-amendoim500.webp"
   },
   "aveia-proteica1kg": {
     "brand": "BROWTH",
@@ -961,7 +964,8 @@
     "launched_at": "2026-09-30T19:13:19Z",
     "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
     "demo_complete": false,
-    "rating_count": 0
+    "rating_count": 0,
+    "back_image": "/assets/backs/aveia-proteica1kg.webp"
   },
   "multi-capsulas60": {
     "brand": "BROWTH",
@@ -978,7 +982,8 @@
     "launched_at": "2026-09-30T19:13:19Z",
     "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
     "demo_complete": false,
-    "rating_count": 0
+    "rating_count": 0,
+    "back_image": "/assets/backs/multi-capsulas60.webp"
   },
   "multi-comprimidos60": {
     "brand": "BROWTH",
@@ -995,7 +1000,8 @@
     "launched_at": "2026-09-30T19:13:19Z",
     "source": "Características visíveis na imagem da embalagem enviada pelo projeto.",
     "demo_complete": false,
-    "rating_count": 0
+    "rating_count": 0,
+    "back_image": "/assets/backs/multi-comprimidos60.webp"
   },
   "whey300-baunilha": {
     "brand": "BROWTH",
