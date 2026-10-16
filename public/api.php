@@ -61,7 +61,7 @@ try {
    RateLimit::check('review:'.$visitor,5);
    RateLimit::check('review-ip:'.($_SERVER['REMOTE_ADDR']??'unknown'),20);
    $data=body();$name=$data['author_name']??null;$comment=$data['comment']??null;$rating=$data['rating']??null;
-   if(!is_string($name)||!is_string($comment)||!is_int($rating)||$rating<1||$rating>5)throw new HttpError(422,'Informe nome, comentário e nota de 1 a 5.');
+   if(!is_string($name)||!is_string($comment)||(!is_int($rating)&&!is_float($rating))||!is_finite((float)$rating)||$rating<0||$rating>5||($rating*2)!=floor($rating*2))throw new HttpError(422,'Informe nome, comentário e nota de 0 a 5, em intervalos de meia estrela.');
    $name=trim($name);$comment=trim($comment);
    if(mb_strlen($name)<2||mb_strlen($name)>80||mb_strlen($comment)<10||mb_strlen($comment)>2000)throw new HttpError(422,'Use um nome de 2 a 80 caracteres e um comentário de 10 a 2000 caracteres.');
    $db->request('POST','product_reviews',['on_conflict'=>'product_id,visitor_hash'],['product_id'=>$id,'visitor_hash'=>$visitor,'author_name'=>$name,'rating'=>$rating,'comment'=>$comment,'updated_at'=>gmdate('c')],'resolution=merge-duplicates,return=minimal');
