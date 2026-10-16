@@ -8,19 +8,19 @@ const {ratingLabel}=await import('data:text/javascript;base64,'+Buffer.from(sour
 test('sem avaliações mostra cinco estrelas vazias e nota zero',()=>{
  const html=ratingLabel({rating_count:0,rating:null});
  assert.match(html,/width:0%/);
- assert.match(html,/0 \/ 5 · Sem avaliações/);
+ assert.ok(html.includes('0 / 5 · Sem avaliações'));
 });
 test('a média preenche todas as estrelas anteriores e parte da próxima',()=>{
  const html=ratingLabel({rating_count:2,rating:2.5});
  assert.match(html,/width:50%/);
- assert.match(html,/2,5 \/ 5/);
- assert.match(html,/2 avaliações/);
+ assert.ok(html.includes('2,5 / 5'));
+ assert.ok(html.includes('2 avaliações'));
 });
 test('não deixa a visualização ultrapassar cinco estrelas',()=>{
  assert.match(ratingLabel({rating_count:1,rating:10}),/width:100%/);
 });
 test('formulário possui escolha de zero e dez opções de meia estrela',()=>{
- assert.match(source,/value=\\"0\\" required/);
- assert.match(source,/length:10/);
- assert.match(source,/rating\\*20/);
+ assert.ok(source.includes('value="0" required'));
+ assert.ok(source.includes('length:10'));
+ assert.ok(source.includes('value*20'));
 });
