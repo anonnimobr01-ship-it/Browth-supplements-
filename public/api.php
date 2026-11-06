@@ -29,6 +29,8 @@ try {
  ]);
  if ($path==='/api/health' && $method==='GET') respond(['ok'=>true,'service'=>'BROWTH API']);
  $db=database();
+ if (str_starts_with($path,'/api/admin')) { $result=Admin::handle($path,$method,$db); respond($result['data'],$result['status']); }
+
  if ($path==='/api/products' && $method==='GET') {
   $ranges=['all'=>[0,null],'0-5000'=>[0,5000],'5000-10000'=>[5000,10000],'10000-15000'=>[10000,15000],'15000-25000'=>[15000,25000],'25000-plus'=>[25001,null]];
   $budget=$_GET['budget']??'all';$category=$_GET['category']??'';
