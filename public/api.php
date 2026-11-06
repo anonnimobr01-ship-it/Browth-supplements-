@@ -3,7 +3,7 @@ declare(strict_types=1);
 ini_set('display_errors','0');
 header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');header('X-Content-Type-Options: nosniff');
 require dirname(__DIR__).'/src/bootstrap.php';
-use Browth\{Auth,HttpError,RateLimit,Validation};
+use Browth\{Auth,HttpError,RateLimit,Validation,Admin};
 function respond(mixed $value,int $status=200): never {http_response_code($status);echo json_encode($value,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_THROW_ON_ERROR);exit;}
 function body(): array {
  if (!str_starts_with(strtolower($_SERVER['CONTENT_TYPE']??''),'application/json')) throw new HttpError(415,'Envie JSON.');
@@ -29,6 +29,8 @@ try {
  ]);
  if ($path==='/api/health' && $method==='GET') respond(['ok'=>true,'service'=>'BROWTH API']);
  $db=database();
+ if (str_starts_with($path,'/api/admin')) { $result=Admin::handle($path,$method,$db); respond($result['data'],$result['status']); }
+
  if ($path==='/api/products' && $method==='GET') {
   $ranges=['all'=>[0,null],'0-5000'=>[0,5000],'5000-10000'=>[5000,10000],'10000-15000'=>[10000,15000],'15000-25000'=>[15000,25000],'25000-plus'=>[25001,null]];
   $budget=$_GET['budget']??'all';$category=$_GET['category']??'';

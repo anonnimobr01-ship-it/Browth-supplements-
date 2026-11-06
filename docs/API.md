@@ -44,3 +44,19 @@ O frontend preserva chave e conteúdo da tentativa em sessionStorage até confir
 HTTPs principais: 400 JSON inválido; 401 token inválido/ausente; 403 origem; 404 inexistente/não pertence ao usuário; 405 método; 409 conflito comercial; 413 corpo excessivo; 415 mídia; 422 validação; 429 limite; 503 configuração/serviço indisponível.
 
 Limites locais por minuto: 180 requisições/IP, até 120 acessos/usuário (mutações aplicam limite 40), 10 tentativas de checkout/usuário. A implementação em arquivo atende instância única; em múltiplas instâncias configure limitação compartilhada na infraestrutura. Não confia em X-Forwarded-For enviado pelo cliente.
+
+
+## Rotas administrativas
+
+Todas as rotas abaixo exigem Firebase ID token válido **e** UID presente em `public.admin_users`. A autorização é verificada no backend em cada chamada.
+
+| Método | Rota | Função |
+|---|---|---|
+| GET | `/admin/overview?period=7d|30d|90d|365d|all` | Indicadores, faturamento, ticket médio e produtos mais vendidos |
+| GET | `/admin/orders?offset=0&status=paid&from=YYYY-MM-DD&to=YYYY-MM-DD` | Pedidos e itens com filtros |
+| GET | `/admin/users?offset=0&q=termo` | Usuários sincronizados e resumo de compras |
+| GET | `/admin/users/{uid}/orders` | Histórico de compras de um usuário |
+| GET | `/admin/admins` | Administradores atuais |
+| POST | `/admin/admins` | Concede/remove permissão: `{"uid":"FIREBASE_UID","action":"grant"}` ou `revoke` |
+
+A receita considera pedidos com status `paid` ou `shipped`; pedidos pendentes e cancelados não entram no faturamento. Usuários aparecem após autenticar no site, quando o perfil é sincronizado em `profiles`. A configuração do primeiro administrador está em [ADMIN.md](ADMIN.md).
