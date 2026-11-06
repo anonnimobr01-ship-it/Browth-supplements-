@@ -149,7 +149,7 @@ final class Admin {
         $uids = array_values(array_unique(array_column($rows,'uid')));
         $counts = [];
         if ($uids) {
-            $orders = $db->request('GET','orders',['uid'=>'in.('.implode(',',$uids).')','select'=>'uid,id,status,total_cents,created_at','order'=>'created_at.desc','limit'=>500]);
+            $orders = self::all($db,'orders',['uid'=>'in.('.implode(',',$uids).')','select'=>'uid,id,status,total_cents,created_at','order'=>'created_at.desc'],10000);
             foreach ($orders as $order) {
                 $key=$order['uid'];
                 if (!isset($counts[$key])) $counts[$key]=['orders_count'=>0,'spent_cents'=>0];
